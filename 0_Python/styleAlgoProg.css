@@ -1,0 +1,15 @@
+p.bio {
+    margin-right: 150px;
+}
+
+img.bio {
+    width: 150px;
+    margin: 0px 0px 0px 15px;
+    float: right;
+}
+
+div.encadre:after {
+  content: "";
+  display: table;
+  clear: both;
+}

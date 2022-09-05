@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="fr">
+    <head>
+        <meta charset="utf-8"/>
+        <link rel="stylesheet" href="../style.css"/>
+    </head>
+    <body>
+        <div class="main">
+            <h1>Les dictionnaires</h1>
+            <p>
+                Le dictionnaire est un type de variable qui permet de stocker des associations entre des <mark>clés</mark> et des <mark>valeurs</mark>.<br/>
+                Toutes les clés du dictionnaire doivent être différentes, mais une valeur peut être associée à plusieurs clés.<br/>
+                Un dictionnaire permettrait par exemple de gérer un inventaire en indiquant, pour chaque référence d'objet (les clés), en combien d'exemplaires ils sont présents (les valeurs).
+            </p>
+            <h2>Déclarer un dictionnaire</h2>
+            On peut déclarer un dictionnaire en indiquant toutes les associations en utilisant des accolades et le symbole <mark class="code">:</mark>.
+            <div class="algo">
+                <input type="button" class="copier" value="📑" title="copier">
+                <p class="code">
+                    Dico = {"cahier":5, "stylos":6, "crayon":3, "compas":0}
+                </p>
+            </div>
+            Pour un dictionnaire vide, on n'écrit rien entre les crochets.
+            <div class="algo">
+                <input type="button" class="copier" value="📑" title="copier">
+                <p class="code">
+                    L = {}
+                </p>
+            </div>
+            <div class="exercice">
+                Stocker dans un dictionnaire les associations entre les spécialités que vous suivez et le nom du professeur.
+            </div>
+            <h2>Accéder à une valeur du dictionnaire</h2>
+            On accède à une valeur d’un dictionnaire grâce à sa clé.
+            La syntaxe est semblable à celle d'une liste, on utilise des crochets.
+            Exemples :
+            <div class="algo">
+                <input type="button" class="copier" value="📑" title="copier">
+                <p class="code">
+                    pokemon = {"nom":"Onix", "energie":"Terre", "PV":100}<br/>
+                    print("Ce pokémon s'appelle :", <mark>pokemon["nom"]</mark>)
+                </p>
+            </div>
+            <div class="exercice">
+                Ecrire une fonction prenant en paramètre un pokemon (dictionnaire contenant les clés <mark class="code">"nom"</mark>, <mark class="code">"energie"</mark> et <mark class="code">"PV"</mark>) et qui affiche une phrase du type <mark class="code">"Le pokémon ... est de type ... et a ... PV."</mark>
+            </div>
+            <h2>Ajouter ou modifier des valeurs d'un dictionnaire</h2>
+            On peut utiliser la syntaxe précédente pour ajouter ou pour modifier une valeur associée à une clé dans le dictionnaire. Exemple :
+            <div class="algo">
+                <input type="button" class="copier" value="📑" title="copier">
+                <p class="code">
+                    pokemon = {"nom":"Onix", "energie":"Terre", "PV":100}<br/>
+                    print(pokemon["nom"], "perd 5 points de vie.")<br/>
+                    pokemon["PV"] = pokemon["PV"] - 5<br/>
+                    print(pokemon["nom"], "est le pokémon n° 95")<br/>
+                    pokemon["numero"] = 95
+                </p>
+            </div>
+            <h2>Retirer une association d'un dictionnaire</h2>
+            <p>On peut retirer une clé et sa valeur associée en utilisant la méthode <mark class="code">.pop</mark>. Exemple :</p>
+            <div class="algo">
+                <input type="button" class="copier" value="📑" title="copier">
+                <p class="code">
+                    pokemon = {"nom":"Onix", "energie":"Terre", "PV":100}<br/>
+                    pokemon.pop("energie")
+                </p>
+            </div>
+            <h2>Accéder à une valeur du dictionnaire - complément</h2>
+            On peut aussi accéder à une valeur du dictionnaire grâce à la méthode <mark class="code">get</mark>.
+            Cette méthode présente l'avantage de retourner une valeur choisie dans le cas où la clé n'est pas présente dans le dictionnaire.
+            Exemple :
+            <div class="algo">
+                <input type="button" class="copier" value="📑" title="copier">
+                <p class="code">
+                    panier = {"poire":3, "pomme":4, "orange":2}<br/>
+                    print("J'ai", panier["pomme"], "pommes dans mon panier.")<font class="commentaire"># 4 pommes</font><br/>
+                    print("J'ai", panier["cerise"], "cerises dans mon panier.")<font class="commentaire"># génère une erreur</font><br/>
+                    print("J'ai", panier.get("pomme", 0), "pommes dans mon panier.")<font class="commentaire"># 4 pommes</font><br/>
+                    print("J'ai", panier.get("cerise", 0), "cerises dans mon panier.")<font class="commentaire"># 0 cerises</font><br/>
+                </p>
+            </div>
+            <h2>Parcourir un dictionnaire</h2>
+            On peut parcourir facilement les données d'un dictionnaire à l'aide d'une boucle <mark class="code">for</mark> en faisant appel au clés du dictionnaire.
+            Exemple :
+            <div class="algo">
+                <input type="button" class="copier" value="📑" title="copier">
+                <p class="code">
+                    panier = {"poire":3, "pomme":4, "orange":2} <br/>
+                    for fruit in panier :<br/>
+                    &nbsp;&nbsp;&nbsp;&nbsp; print("J'ai", panier[fruit], fruit+"s", "dans mon panier.")
+                </p>
+            </div>
+            Dans cet exemple, à chaque passage, le nom du fruit est <mark class='code'>fruit</mark> et le nombre de ce fruit dans le panier est <mark class="code">panier[fruit]</mark>. 
+            <h2>Vérifier si une clé est dans le dictionnaire</h2>
+            On peut vérifier facilement si une clé est présente dans le dictionnaire, de la même façon que pour une liste.
+            Exemple :
+            <div class="algo">
+                <input type="button" class="copier" value="📑" title="copier">
+                <p class="code">
+                    panier = {"poire":3, "pomme":4, "orange":2} <br/>
+                    fruit = input{"Quel fruit veux-tu manger ?"} <br/>
+                    if fruit in panier : <br/>
+                    &nbsp;&nbsp;&nbsp;&nbsp; print("J'en ai", panier[fruit]) <br/>
+                    else : <br/>
+                    &nbsp;&nbsp;&nbsp;&nbsp; print("Je n'ai pas ce fruit.")
+                </p>
+            </div>
+            <h2>Exercices</h2>
+            <h3>Couleurs en anglais</h3>
+            <div class="exercice">
+                <ol>
+                    <li>Ecrire un dictionnaire donnant le mot anglais correspondant aux principales couleurs.</li>
+                    <li>Ecrire une fonction fabriquant le dictionnaire permettant de passer de l'anglais au français à partir du dictionnaire de la question 1.</li>
+                </ol>
+            </div>
+            <h3>Pluriel de mots</h3>
+            En français, la plupart des pluriels sont formé en ajoutant un <mark class="code">s</mark> au pluriel.
+            Il existe cependant beaucoup d’exception à cette règle.
+            <div class="exercice">
+                Ecrire une fonction <mark class="code">pluriel(animal)</mark> qui écrit la forme pluriel d'un animal donné en paramètre.
+                Cette fonction prend en paramètre le nom d'un animal composé d'un seul mot.
+                Vous prendrez en compte les exceptions :cheval, ours, rhinocéros, souris, hibou (mais aussi tout ceux auquel vous penserez) que vous stockerez dans un dictionnaire.
+            </div>
+            <h3>Compter le nombre de lettres dans un texte</h3>
+            On souhaite connaître le nombre d'apparition de chaque lettre dans un texte.
+            <div class="exercice">
+                Ecrire une fonction <mark class="code">compte_lettre(texte)</mark> qui construit un dictionnaire associant aux caractères apparaissant dans le texte le nombre de fois qu'ils apparaissent. Exemple :
+                <div class="algo">
+                    <input type="button" class="copier" value="📑" title="copier">
+                    <p class="code">
+                        >>> print(compte_lettre("Un exemple simple."))<br/>
+                        {'U':1, 'n':1, ' ':2, 'e':4, 'x':1, 'm':2, 'p':2, 'l':2, 's':1, 'i':1, '.':1}
+                    </p>
+                </div>
+                Vous utiliserez un dictionnaire vide qui sera complété par chaque lettre apparaissant dans le mot.
+            </div>
+            <h3>Relevé de note</h3>
+            <p>
+                On souhaite manipuler des notes obtenues à des devoirs ayant des barèmes et des coefficients différents.
+                Les informations concernant les devoirs (nom, barème, coefficient, note) sont regroupées dans un dictionnaire.
+                Ces dictionnaires sont ensuite regroupés dans une liste.
+                Nous allons écrire toutes les fonctions permettant à l'utilisateur de manipuler le relevé de note sans qu'il n'ai besoin de connaître la façon dont il est implémenté.
+            </p>
+            <div class="exercice">
+                <ol>
+                    <li>Ecrire une fonction <mark class="code">creer_releve_vide()</mark> qui retourne un relevé de note vide</li>
+                    <li>Ecrire une fonction : <br/>
+                        <mark class="code">ajouter_note(releve, nom, bareme, coefficient, note)</mark> qui ajoute une nouvelle note au relevé de note <mark class="code">releve</mark>.</li>
+                    <li>Ecrire une fonction <mark class="code">retirer_note(releve, nom)</mark> qui retire le devoir répondant au bon <mark class="code">nom</mark> au relevé de note <mark class="code">releve</mark>.</li>
+                    <li>Ecrire une fonction <mark class="code">calculer_moyenne(releve)</mark> qui calcule la moyenne des notes du relevé de note <mark class="code">releve</mark>.</li>
+                </ol>
+            </div>
+            <h3>Scrabble</h3>
+            <p>
+                Le jeu du Scrabble consiste à construire des mots à l'aide d'un nombre limité de lettres.
+                Chaque lettre est associée à un nombre de points. Le score d'un mot est alors égal à la somme des points des lettres qui le compose.
+                Voici les points associées à chaque lettre :
+            </p>
+            <table>
+                <tr><th>points</th><th>lettres</th></tr>
+                <tr><td>10</td><td>K W X Y Z</td></tr>
+                <tr><td>8</td><td>J Q</td></tr>
+                <tr><td>4</td><td>F H V</td></tr>
+                <tr><td>3</td><td>B C P</td></tr>
+                <tr><td>2</td><td>D M G</td></tr>
+                <tr><td>1</td><td>A E I L N O R S T U</td></tr>
+            </table>
+            <div class="exercice">
+                <ol>
+                    <li>Ecrire une fonction <mark class="code">creer_dict_points_lettres()</mark> qui retourne le dictionnaire associant à chaque lettre son nombre de points.</li>
+                    <li>Ecrire une fonction <mark class="code">calculer_points(mot)</mark> qui retourne le nombre de points associé au mot donné en paramètre.</li>
+                    <li>Combien de points rapportent les mots <mark class="code">CLEMENTINE</mark>, <mark class="code">PIZZA</mark> et <mark class="code">KIWI</mark> ?</li>
+                </ol>
+            </div>
+            <h3>TODO liste</h3>
+            <p>
+                Une TODO liste est une liste de choses à faire d'urgence.
+                Nous allons créer un moyen de gérer une TODO liste permettant de gérer :
+                <ul>
+                    <li>le nom de la tâche à faire</li>
+                    <li>la priorité de cette tâche :</li>
+                    <ol>
+                        <li>facultative</li>
+                        <li>secondaire</li>
+                        <li>normale</li>
+                        <li>urgente</li>
+                        <li>très urgente</li>
+                    </ol>
+                    <li>l'échéance</li>
+                    <li>le statut : réalisé ou non</li>
+                </ul>
+            </p>
+            <div class="exercice">
+                <ol>
+                    <li>Proposer une structure permettant de gérer une tâche de cette TODO liste en précisant les types de toutes les variables utilisées.</li>
+                    <li>Dans quelle type de structure peut-on stocker toutes ces tâches afin de les retrouver très rapidement grâce à leur nom ? Quel est l'inconvénient de cette méthode ?</li>
+                    <li>Ecrire une fonction <mark class="code">creer_TODO_liste()</mark> retournant une TODO liste vide.</li>
+                    <li>Ecrire une fonction <mark class="code">ajouter_tache(TDL, nom, priorite, echeance)</mark> ajoutant une tâche à la TODO liste <mark class="code">TDL</mark>.</li>
+                    <li>Ecrire une fonction <mark class="code">marque_comme_realisee(TDL, nom)</mark> marquant la bonne tâche comme réalisée.</li>
+                    <li>Ecrire une fonction <mark class="code">afficher_prochaine_tache(TDL, aujourdhui)</mark> choisissant la prochaine tâche non réalisée dont l'échéance n'est pas passée et tenant compte des priorités.</li>
+                </ol>
+            </div>
+        </div>
+        <script type="text/javascript" src="script.js"></script>
+    </body>
+</html>
