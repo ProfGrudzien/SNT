@@ -20,7 +20,7 @@ h2:before {
 }
 
 .index h2:before {
-    content: "📚 ";
+    content: "";
 }
 
 h3 {
