@@ -1,0 +1,15 @@
+\documentclass{standalone}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{scratch3}
+
+\begin{document}
+    \begin{scratch}
+        \blockinit{quand \greenflag est cliqué}
+        \blockvariable{mettre \selectmenu{puissance} à \ovalnum{1}}
+        \blockrepeat{répéter \ovalnum{10} fois}{
+            \blockvariable{mettre \selectmenu{puissance} à \ovaloperator{\ovalvariable{puissance} $*$ \ovalnum{2}}}
+        }
+        \blocklook{dire \ovalvariable{puissance}}
+    \end{scratch}
+\end{document}

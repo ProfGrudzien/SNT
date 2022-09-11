@@ -1,0 +1,25 @@
+\documentclass{standalone}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{scratch3}
+
+\begin{document}
+    \begin{scratch}
+        \blockinit{quand \greenflag est cliqué}
+        \blocksensing{demander \ovalnum{Quel jour est-on (nombre entier) ?} et attendre}
+        \blockvariable{mettre \selectmenu{jour} à \ovalsensing{réponse}}
+        \blocksensing{demander \ovalnum{De quel mois (de 1 à 12) ?} et attendre}
+        \blockvariable{mettre \selectmenu{mois} à \ovalsensing{réponse}}
+        \blockifelse{si \booloperator{\ovalvariable{mois} < \ovalnum{12}} alors}
+            {
+                \blockvariable{mettre \selectmenu{reste} à \ovaloperator{\ovalnum{12} $-$ \ovalvariable{mois}}}
+                \blocklook{dire \ovaloperator{regrouper \ovalvariable{reste} et \ovalnum{mois avant Noël.}}}
+            }
+            {
+                \blockvariable{mettre \selectmenu{reste} à \ovaloperator{\ovalnum{25} $-$ \ovalvariable{jour}}}
+                    \blockifelse{si \booloperator{\ovalvariable{reste} > \ovalnum{0}} alors}
+                    {\blocklook{dire \ovaloperator{regrouper \ovalvariable{reste} et \ovalnum{jour(s) avant Noël.}}}}
+                    {\blocklook{dire \ovalnum{C'est Noël !}}}
+            }
+    \end{scratch}
+\end{document}

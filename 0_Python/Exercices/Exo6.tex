@@ -1,0 +1,25 @@
+\documentclass{standalone}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{scratch3}
+
+\begin{document}
+    \begin{scratch}
+        \blockinit{quand \greenflag est cliqué}
+        \blocksensing{demander \ovalnum{Quelle est la valeur de a ?} et attendre}
+        \blockvariable{mettre \selectmenu{a} à \ovalsensing{réponse}}
+        \blocksensing{demander \ovalnum{Quelle est la valeur de b ?} et attendre}
+        \blockvariable{mettre \selectmenu{b} à \ovalsensing{réponse}}
+        \blockrepeat{répéter jusqu'à ce que \booloperator{\ovalvariable{a} $=$ \ovalvariable{b}}}
+        {
+        \blockifelse{si \booloperator{\ovalvariable{a} > \ovalvariable{b}} alors}
+            {
+                \blockvariable{mettre \selectmenu{a} à \ovaloperator{\ovalvariable{a} $-$ \ovalvariable{b}}}
+            }
+            {
+                \blockvariable{mettre \selectmenu{b} à \ovaloperator{\ovalvariable{b} $-$ \ovalvariable{a}}}
+            }
+        }
+        \blocklook{dire \ovaloperator{regrouper \ovalnum{Le PGCD de a et b est } et \ovalvariable{a}}}
+    \end{scratch}
+\end{document}

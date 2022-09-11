@@ -1,0 +1,16 @@
+\documentclass{standalone}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{scratch3}
+
+\begin{document}
+    \begin{scratch}
+        \blockinit{quand \greenflag est cliqué}
+        \blocksensing{demander \ovalnum{Criez : } et attendre}
+        \blockvariable{mettre \selectmenu{echo} à \ovalsensing{réponse}}
+        \blockrepeat{répéter \ovalnum{3} fois}
+            {
+                \blocklook{dire \ovalvariable{echo}}
+            }
+    \end{scratch}
+\end{document}
