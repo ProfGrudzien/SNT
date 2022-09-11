@@ -1,1 +1,0 @@
-nom = input("Ton nom ?")

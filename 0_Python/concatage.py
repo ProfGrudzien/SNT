@@ -1,1 +1,0 @@
-txt = str(age) + " ans."

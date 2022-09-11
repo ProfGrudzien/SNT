@@ -1,1 +1,0 @@
-txt = "Bonjour " + nom
