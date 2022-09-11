@@ -1,0 +1,18 @@
+\documentclass{standalone}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{scratch3}
+
+\begin{document}
+    \begin{scratch}
+        \blockinit{quand \greenflag est cliqué}
+        \blocklook{dire \ovalnum{Paré au décollage...}}
+        \blockvariable{mettre \selectmenu{compteur} à \ovalnum{5}}
+        \blockrepeat{répéter \ovalnum{5} fois}
+            {
+                \blocklook{dire \ovalvariable{compteur}}
+                \blockvariable{ajouter \ovalnum{-1} à \selectmenu{compteur}}
+            }
+        \blocklook{dire \ovalnum{Feu !}}
+    \end{scratch}
+\end{document}

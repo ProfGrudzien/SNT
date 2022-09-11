@@ -1,0 +1,1 @@
+convert -density 200 Exo2021-2.pdf Exo2021-2.png

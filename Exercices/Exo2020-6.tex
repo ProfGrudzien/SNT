@@ -1,0 +1,19 @@
+\documentclass{standalone}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{scratch3}
+
+\begin{document}
+    \begin{scratch}
+        \blockinit{quand \greenflag est cliqué}
+        \blocksensing{demander \ovalnum{Entrez un nombre positif : } et attendre}
+        \blockvariable{mettre \selectmenu{nombre} à \ovalsensing{réponse}}
+        \blockifelse{si \booloperator{\ovalvariable{nombre} < 0} alors}
+            {
+                \blocklook{dire \ovalnum{J'ai demandé un nombre positif !}}
+            }
+            {
+                \blocklook{dire \ovalnum{Merci !}}
+            }
+    \end{scratch}
+\end{document}

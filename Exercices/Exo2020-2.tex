@@ -1,0 +1,13 @@
+\documentclass{standalone}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{scratch3}
+
+\begin{document}
+    \begin{scratch}
+        \blockinit{quand \greenflag est cliqué}
+        \blocksensing{demander \ovalnum{Donne moi un prénom :} et attendre}
+        \blockvariable{mettre \selectmenu{txt} à \ovalsensing{réponse}}
+        \blocklook{dire \ovaloperator{regrouper \ovalnum{Désormais, je m'appelle } et \ovalvariable{txt}}}
+    \end{scratch}
+\end{document}
