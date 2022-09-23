@@ -1,0 +1,14 @@
+.date{
+    text-align: center;
+    font-weight: bold;
+}
+
+.evenement {
+    display: block;
+    width: 400px;
+    border: 1px solid gray;
+    cursor: grab;
+    margin: 3px auto;
+    user-select: none;
+    padding: 5px;
+}
