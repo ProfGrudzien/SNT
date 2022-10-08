@@ -4,11 +4,20 @@
 }
 
 .evenement {
-    display: block;
+    display: inline-block;
     width: 400px;
     border: 1px solid gray;
     cursor: grab;
     margin: 3px auto;
     user-select: none;
     padding: 5px;
+    vertical-align: middle;
+    font-weight: normal;
+}
+
+#btnHistorique {
+    display: inline-block;
+    width: 150px;
+    height: 50px;
+    margin: auto;
 }

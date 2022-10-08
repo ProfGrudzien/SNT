@@ -18,15 +18,88 @@
                     Internet : Le réseau informatique mondial accessible au public.
                 </li>
                 <li>
-                    Web : Service proposé sur le réseau Internet qui donne accès à des pages reliées par des liens.<br/>
-                    Remarque : D’autres services sont aussi proposés sur internet comme le courrier électronique ou le partage de fichier en pair à pair.
+                    Web : Service proposé sur le réseau Internet qui donne accès à des pages reliées par des liens.
+                    Remarque : d’autres services sont aussi proposés sur internet comme le courrier électronique ou le partage de fichier en pair à pair.
                 </li>
             </ul>
-            <h2>Repère historiques</h2>
+            <h2>Repères historiques</h2>
             <div class="exercice">
                 Placer dans l'ordre chronologique les événements suivants :
                 <div id="ExerciceHistorique"></div>
+                <p class="centrer" id="reponseHistorique"></p>  
+                <p class="centrer">
+                    <input type="button" value="Vérifier" id="btnHistorique">
+                </p>
             </div>
+            <h2>L’infrastructure d’Internet</h2>
+            <h3>A la maison</h3>
+            <p>
+                La connexion se fait la plupart du temps par l'intermédiaire d'une box internet.
+                Il s'agît d'un boîtier faisant office de switch et de routeur (nous verrons en détails ces deux équipements plus tard).
+                Pour se connecter à cette box, les trois technologies les plus répandues sont :
+                <ul>
+                    <li>
+                        <b>le câble Ethernet :</b> c'est la solution la plus fiable et offrant les plus grands débit.
+                        Ils sont composés de fils de cuivre (8 par exemple pour le plus répandu : le câble RJ45).
+                        L'information est transmise grâce au courant électrique circulant dans ces fils.
+                        <img title="source : wikipedia" src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d4/RJ45bottom.jpg/1280px-RJ45bottom.jpg"></img>
+                    </li>
+                    <li>
+                        <b>le Wi-Fi :</b> l'information est transmise par des ondes.
+                        Le débit dépend de la qualité du signal qui dépend fortement de l’environnement.
+                        La présence d'un grand nombre de réseau Wi-Fi (en appartement par exemple) ou des murs épais (murs porteurs, béton armé) peuvent très fortement perturber les ondes.
+                    </li>
+                    <li>
+                        <b>le CPL (courant porteur en ligne) :</b> cette technologie utilise l'installation électrique du bâtiment.
+                        un faible courant est superposé au courant régulier alimentant les prises électriques.
+                        Les boîtiers CPL fonctionnent au minimum par 2 et sont branchés sur les prises électriques.
+                        Ils sont ensuite raccordés aux différents équipements par câbles Ethernet.
+                        Certains modèles créent un point d'accès Wi-Fi.
+                        <img title="source : de.wikipedia.org" src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e0/2016-08-17_Devolo_dLAN_200_AVplus_-_5016.jpg/800px-2016-08-17_Devolo_dLAN_200_AVplus_-_5016.jpg"></img>
+                    </li>
+                </ul>
+            </p>
+            <h3>De la maison au réseau</h3>
+            <p>
+                D'autres technologies permettent de relier la box internet au reste du réseau :
+                <ul>
+                    <li>
+                        <b>l'ADSL (Asymmetric Digital Subscriber Line)</b> utilise le réseau téléphonique existant.
+                        Un courant électrique circule dans des fils de cuivre très semblable aux câbles Ethernet.
+                    </li>
+                    <li>
+                        <b>la fibre optique</b> utilise la lumière et non l'électricité pour transmettre les informations.
+                        Le passage de l'ADSL à la fibre optique nécessite l'intervention d'un technicien pour l'installation de fibre depuis le raccordement dans la rue et jusqu’à l'emplacement de la box internet.
+                        Les câbles de fibre optique sont principalement composés de gaines en plastique qui protègent quelques brins en silice.
+                        Ces derniers sont épais comme des cheveux et cassant. La fibre optique est donc à manipuler avec précaution. 
+                    </li>
+                    <li>
+                        <b>La 3G/4G/5G</b> qui utilise des ondes pour transmettre les données. La principale différence entre ces technologies est la longueur d'onde utilisé qui permet des débits différents.
+                    </li>
+                </ul>
+            </p>
+            <h3>Entre deux pays</h3>
+            <p>
+                La majeure partie de nos communications est adressée à des serveurs situés au États-Unis.
+                Elles sont transmissent grâce à :
+                <ul>
+                    <li>
+                        <b>des câbles terrestres</b> (en fibre optique) situés sous les autoroutes et les lignes de chemin de fer par exemple.
+                    </li>
+                    <li>
+                        <b>des câbles sous-marins</b> (en fibre optique) qui traverse les océans.
+                        Depuis 2012, on compte plus d’un million de kilomètres de câbles sous-marins.
+                        Ils transmettent plus de 98% de nos données.
+                        Ils sont listés sur le site <a href="https://www.submarinecablemap.com/">https://www.submarinecablemap.com/</a>.
+                    </li>
+                    <li>
+                        <b>Les satellites</b> jouent un rôle mineure dans le transfert de nos données.
+                        A l'origine, seuls les satellites en orbite géostationnaire à 35 000 km d'altitude était utilisés.
+                        Cela conduisant à un temps de latence de plusieurs dixièmes de seconde du au parcours des 70 000 km par les ondes.<br/>
+                        Aujourd'hui, des projets d'internet par satellites en basse altitude se déploient. C'est le cas de Starlink (de SpaceX dirigé par Elon Musk) qui va mettre en orbite plusieurs milliers de satellites. Mi-mai 2022, SpaceX a déjà lancé 2 600 satellites dont 2 350 sont encore en orbite et 2 320 sont opérationnels.
+                    </li>
+                </ul>
+            </p>
         </div>
         <script type="text/javascript" src="../script.js"></script>
         <script type="text/javascript" src="ExerciceHistorique.js"></script>
