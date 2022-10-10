@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="fr">
+    <head>
+        <meta charset="utf-8"/>
+        <link rel="stylesheet" href="../style.css"/>
+        <link rel="stylesheet" href="wireshark.css"/>
+    </head>
+    <body>
+        <div class="main">
+            <h1>Le protocole TCP</h1>
+            <h2>Un protocole pour communiquer</h2>
+            <p>
+                Voici deux petites scénettes présentant la même situation, la première comme elle pourrait se passer dans la vie de tous les jours, la seconde est une version imagée de ce qui se passe entre deux ordinateurs.
+            </p>
+            <p>
+                <i>Emma rentre du lycée, Paul lit son journal.</i><br/>
+                Emma – Coucou c’est moi, je suis rentrée ! J’ai quelque-chose à te dire...<br/>
+                <i>Il continue de lire, sans la remarquer.</i><br/>
+                Emma – Papa ! Tu m’écoute ?<br/>
+                Paul – Oui mon poussin, que se passe t’il ?<br/>
+                Emma – J’ai quelque-chose à te dire à propos de mon devoir de maths.<br/>
+                Paul – Je t’écoute...<br/>
+                Emma – J’aimerai que tu m’aides, je n’ai pas tout compris.<br/>
+                Paul – Je fini de lire cet article et j’arrive. Commence par relire ta leçon !<br/>
+                <i>Emma se dirige dans sa chambre en traînant son sac.</i>
+            </p>
+            <p>
+                emma – je souhaite communiquer avec paul<br/>
+                <i>un laps de temps s’écoule, sans réponse</i><br/>
+                emma – je souhaite communiquer avec paul<br/>
+                paul – bien reçu, je t’écoute.<br/>
+                emma – bien reçu, nous sommes prêts à communiquer.<br/>
+                emma – j’ai une information à transmettre : «A propos de mon devoir de maths, j’ai besoin d’aide.»<br/>
+                paul – j’ai bien reçu cette requête.<br/>
+                paul – voilà la réponse : «je vais t’aider, va dans ta chambre et relis ta leçon.»<br/>
+                emma – j’ai bien reçu ta réponse.<br/>
+                paul – fin de transmission.<br/>
+                emma – bien reçu, fin de transmission.<br/>
+                paul – bien reçu.
+            </p>
+            <div class="exercice">
+                <ul>
+                    <li>Dans la première scénette, qu'est ce qui indique si la communication se passe bien entre les deux protagonistes ?</li>
+                    <li>Et dans la seconde scénette ?</li>
+                    <li>Comment l'appelez-vous dans le cadre de vos échanges sur les réseau sociaux ?</li>
+                    <li>La communication entre deux ordinateurs se fait en trois temps : une demande de communication (synchronisation), des échanges d'information puis une demande de fin de transition. Réaliser le découpage de la seconde scénette selon ces trois temps.</li>
+                    <li>Les règles de politesse imposent aussi un découpage en trois temps. Quel serait ce découpage lorsqu'un inconnu me demande son chemin dans la rue.</li>
+                </ul>
+            </div>
+            <h2>Le protocole TCP</h2>
+            <p>
+                Le protocole permet à deux ordinateurs d’interagir et de se comprendre.
+                Pour communiquer entre eux, ils doivent avoir le même protocole.
+                Sur Internet, le principal protocole utilisé est le TCP (Transmission Control Protocol).
+                Il gère les informations qui sont placées dans des paquets échangés entre les ordinateurs.
+            </p>
+            <p>
+                Le protocole TCP a été conçu par le ministère de la défense américaine pendant la guerre froide.
+                Sa mission est d'être très robuste : il doit assurer que les communications se déroule bien c'est-à-dire que les données sont échangées dans leur intégralité, dans le bon ordre et sans doublons. Pour cela il intègre des mécanisme :
+                <ul>
+                    <li>de détection de pertes d'un paquet</li>
+                    <li>de détection de pertes d'information dans un paquet</li>
+                    <li>de réémission des paquets perdus</li>
+                    <li>de détection de données reçues en double</li>
+                    <li>de réorganisation des paquets arrivés dans le mauvais ordre</li>
+                </ul>
+            </p>
+            <p>
+                Toutes les informations supplémentaires pour le contrôle de la communication sont placés dans l'<mark>entête</mark> du paquet, les informations échangées sont regroupées dans le <mark>corps</mark>.
+            </p>
+            <p>
+                L'entête contient, entre-autre :
+                <ul>
+                    <li>une double numérotation (sequence et ack)</li>
+                    <li>le type du paquet : SYN pour une demande de synchronisation, FIN pour une fin de connexion, ACK pour un accusé de réception.</li>
+                </ul>
+            </p>
+            <p>
+                exemples communication
+            </p>
+            <p>
+                Un logiciel comme Wireshark permet d'écouter les paquets échangés par un ordinateur et notamment les informations utilisées par le protocole TCP.
+            </p>
+            <img src="WireShark.png" id="wireshark">
+        </div>
+        <script type="text/javascript" src="../script.js"></script>
+        <script type="text/javascript" src="wireshark.js"></script>
+    </body>
+</html>
