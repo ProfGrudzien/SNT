@@ -4,6 +4,7 @@
         <meta charset="utf-8"/>
         <link rel="stylesheet" href="../style.css"/>
         <link rel="stylesheet" href="wireshark.css"/>
+        <link rel="stylesheet" href="Animations.css"/>
     </head>
     <body>
         <div class="main">
@@ -12,11 +13,12 @@
             <p>
                 Voici deux petites scénettes présentant la même situation, la première comme elle pourrait se passer dans la vie de tous les jours, la seconde est une version imagée de ce qui se passe entre deux ordinateurs.
             </p>
+            <h4>Dans le monde réél :</h4>
             <p>
                 <i>Emma rentre du lycée, Paul lit son journal.</i><br/>
                 Emma – Coucou c’est moi, je suis rentrée ! J’ai quelque-chose à te dire...<br/>
                 <i>Il continue de lire, sans la remarquer.</i><br/>
-                Emma – Papa ! Tu m’écoute ?<br/>
+                Emma – Papa ! Tu m’écoutes ?<br/>
                 Paul – Oui mon poussin, que se passe t’il ?<br/>
                 Emma – J’ai quelque-chose à te dire à propos de mon devoir de maths.<br/>
                 Paul – Je t’écoute...<br/>
@@ -24,6 +26,7 @@
                 Paul – Je fini de lire cet article et j’arrive. Commence par relire ta leçon !<br/>
                 <i>Emma se dirige dans sa chambre en traînant son sac.</i>
             </p>
+            <h4>Sur un réseau informatique :</h4>
             <p>
                 emma – je souhaite communiquer avec paul<br/>
                 <i>un laps de temps s’écoule, sans réponse</i><br/>
@@ -39,13 +42,13 @@
                 paul – bien reçu.
             </p>
             <div class="exercice">
-                <ul>
+                <ol>
                     <li>Dans la première scénette, qu'est ce qui indique si la communication se passe bien entre les deux protagonistes ?</li>
                     <li>Et dans la seconde scénette ?</li>
                     <li>Comment l'appelez-vous dans le cadre de vos échanges sur les réseau sociaux ?</li>
                     <li>La communication entre deux ordinateurs se fait en trois temps : une demande de communication (synchronisation), des échanges d'information puis une demande de fin de transition. Réaliser le découpage de la seconde scénette selon ces trois temps.</li>
                     <li>Les règles de politesse imposent aussi un découpage en trois temps. Quel serait ce découpage lorsqu'un inconnu me demande son chemin dans la rue.</li>
-                </ul>
+                </ol>
             </div>
             <h2>Le protocole TCP</h2>
             <p>
@@ -75,11 +78,31 @@
                     <li>le type du paquet : SYN pour une demande de synchronisation, FIN pour une fin de connexion, ACK pour un accusé de réception.</li>
                 </ul>
             </p>
+            <h2>Trois études de cas</h2>
+            <h3>1<sup>er</sup> cas : tout va bien</h3>
             <p>
-                exemples communication
+                Dans cette situation, tous les paquets échangés sont bien reçus.
             </p>
+            <div class="animation" id="animationTCP1">
+                <input type="button" value="▶" class="lancer"/>
+            </div>
+            <h3>2<sup>ème</sup> cas : la requête est perdue</h3>
             <p>
-                Un logiciel comme Wireshark permet d'écouter les paquets échangés par un ordinateur et notamment les informations utilisées par le protocole TCP.
+                Dans cette situation, la demande de données du serveur A n'arrive pas à destination.
+            </p>
+            <div class="animation" id="animationTCP2">
+                <input type="button" value="▶" class="lancer"/>
+            </div>
+            <h3>3<sup>ème</sup> cas : la réponse est perdue</h3>
+            <p>
+                Dans cette situation, la réponse du serveur A n'arrive pas à destination.
+            </p>
+            <div class="animation" id="animationTCP3">
+                <input type="button" value="▶" class="lancer"/>
+            </div>
+            <h2>Utiliser un analyseur de paquets</h2>
+            <p>
+                Un analyseur de paquets permet d'écouter les paquets échangés par un ordinateur et notamment les informations utilisées par le protocole TCP. Sur la capture suivante (logiciel Wireshark), on peut identifier les 3 premiers paquets permettant la demande de synchronisation et les 3 derniers permettant la demande de fin de connexion.
             </p>
             <img src="WireShark.png" id="wireshark">
         </div>

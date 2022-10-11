@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="fr">
+    <head>
+        <meta charset="utf-8"/>
+        <link rel="stylesheet" href="../style.css"/>
+        <link rel="stylesheet" href="Animations.css"/>
+    </head>
+    <body>
+        <div class="main">
+            <h1>Le protocole IP</h1>
+            <h2>Un protocole pour se retrouver sur un réseau</h2>
+            <p>
+                Le protocole IP (Internet Protocole) permet de transmettre un paquet au bon ordinateur
+                à travers le réseau. Le contenu du paquet n’a pas d’importance, seule compte l’adresse
+                du destinataire et l’adresse de l’expéditeur.
+                Sur un réseau informatique, les ordinateurs sont identifiés par une adresse appelée
+                adresse IP. Ces adresses sont constituées de 4 nombres compris entre 0 et 255 pour la
+                norme IPv4.
+            </p>
+            <div class="exercice">
+                <ol>
+                    <li>
+                        Exécuter ce programme Python qui permet de déterminer l’adresse IP de votre ordinateur.
+                        <div class="algo">
+                            <input type="button" class="copier" value="📑" title="copier">
+                            <p class="code">
+                                <font class="commentaire"># importer un module contenant des outils supplémentaires</font><br/>
+                                import os<br/>
+                                <font class="commentaire"># utiliser un des outils du module os :</font><br/>
+                                os.system("ipconfig")
+                            </p>
+                        </div>
+                    </li>
+                    <li>Utiliser le site <a href="https://adresseip.com/">https://adresseip.com/</a> pour identifier l’adresse IP de votre ordinateur.</li>
+                    <li>A t’on obtenu la même adresse IP ?</li>
+                </ol>
+            </div>
+            <p>
+                Remarques :
+                <ul>
+                    <li>
+                        L'adresse IP donnée par le programme Python donne l'adresse de l'ordinateur sur le réseau du lycée.<br/>
+                        Dans la classe, nous avons tous une adresse différente même si les deux premiers nombres sont identiques.
+                    </li>
+                    <li>
+                        L'adresse IP donnée par le site internet donne l'adresse du routeur du lycée qui nous connecte à internet.<br/>
+                        Dans la classe, nous avons tous la même adresse.
+                    </li>
+                </ul>
+                Si j'essaye ces deux méthodes à la maison, je trouverai aussi deux adresse IP différentes : l'adresse de mon ordinateur sur le réseau local fourni par la box internet et l'adresse IP de ma box sur Internet.
+            </p>
+            <p>
+                Exemple d'utilisation de ces adresses :<br/>
+                Si j'installe un serveur Minecraft sur mon ordinateur, la première adresse me permet de rediriger correctement les ports dans les paramètres de ma box, la deuxième est celle que je communique à mes amis pour qu'ils me rejoignent.
+            </p>
+            <h2>Le routage</h2>
+            <p>
+                L’objectif est de permettre à deux machines du réseau de communiquer en passant par un chemin raisonnablement court, si possible optimal.
+            </p>
+            <p>
+                Le principe est de renseigner une <mark>table de routage</mark> à chaque nœud du réseau comportant l’adresse des autres nœuds directement connectés. Ensuite, de proche en proche, chaque nœud complète sa table en indiquant l'adresse du prochain intermédiaire à contacter pour communiquer avec les nœuds plus éloignés.
+            </p>
+            <div class="animation" id="animationIP">
+                <input type="button" value="▶" class="lancer"/>
+            </div>
+            <h2>Simulation avec Filius</h2>
+            <p>
+                Filius est un logiciel permettant de simuler des réseaux très simples.
+            </p>
+            <h3>Prise en main du logiciel</h3>
+            <div class="exercice">
+                Dans cet exercice, on souhaite connecter trois ordinateurs puis tester la communication entre ces ordinateurs.
+                <ol>
+                    <li>Placer trois ordinateurs et nommer les « Emma », « Lee-Lou » et « Anna ».</li>
+                    <li>Peut-on les relier entre eux en utilisant uniquement des câbles ?</li>
+                    <li>
+                        Attribuer une adresse IP à ces trois ordinateurs du type 192.168.0.𝓍 <br/>
+                        Quelle contrainte doit-on respecter sur la valeur de 𝓍 ?
+                    </li>
+                    <li>Lancer le mode simulation.</li>
+                    <li>
+                        En cliquant sur un ordinateur, on peut y installer des logiciels.<br/>
+                        Installer le logiciel « ligne de commande » sur l’ordinateur « Emma ».
+                    </li>
+                    <li>
+                        Sur l’ordinateur « Emma », lancer le logiciel « ligne de commande »
+                        puis saisissez la commande <mark class="code">ping</mark>
+                        suivie de l’adresse IP que vous avez choisi pour l’ordinateur «Lee-Lou».<br/>
+                        Vérifier la bonne communication grâce au nombre de paquets transmis.
+                    </li>
+                    <li>
+                        Toujours sur l’ordinateur « Emma », vous pouvez tester la commande <mark class="code">ipconfig</mark>
+                        qui donne l’adresse IP de l’ordinateur.
+                    </li>
+                </ol>
+            </div>
+            <p>
+                Un <mark>switch</mark> (ou commutateur en français) est un appareil permettant de connecter plusieurs équipements réseaux. A ne pas confondre avec un <mark>routeur</mark> qui permet de connecter deux réseaux informatiques.
+            </p>
+            <h3>Version très simplifiée d'internet.</h3>
+            <div class="exercice">
+                Dans cet exercice, nous allons utiliser plusieurs routeurs. Même si leur nombre est très limité, la communication sur cet ensemble de routeur est très comparable à celle sur Internet.
+                <ol>
+                    <li>Télécharger et <b>enregistrer</b> le fichier <a href="IP.fls">IP.fls</a></li>
+                    <li>Lancer le mode simulation.</li>
+                    <li>Trouver l’adresse IP du serveur de Netflix. Pour cela, il peut être nécessaire d'utiliser une ligne de commande vue dans l'exercice précédent.</li>
+                    <li>
+                        En utilisant une ligne de commande vue dans l'exercice précédent,
+                        vérifier que l’ordinateur « Emma » peut communiquer avec le serveur de Netflix.
+                    </li>
+                    <li>
+                        On souhaite savoir par quels routeurs sont passés les paquets.
+                        Pour cela, on utilise la commande <mark class="code">traceroute</mark>
+                        suivie de l’adresse IP du serveur de Netflix.<br/>
+                        Quelles sont les adresses IP des routeurs intermédiaires ?
+                    </li>
+                    <li>
+                        Nous allons simuler une panne sur l'un des routeurs utilisé.<br/>
+                        Retirer un des routeurs (en mode conception) autre que A et H et par lequel passe les données à la question précédente.
+                    </li>
+                    <li>
+                        En utilisant une ligne de commande,
+                        vérifier que l’ordinateur « Emma » peut communiquer avec le serveur de Netflix.
+                    </li>
+                </ol>
+            </div>
+            <h2>Bilan</h2>
+            <p>
+                Le protocole IP permet de gérer en temps réel les chemins empruntés par les
+                paquets échangés sur le réseau en fonction des équipements disponibles.
+                Il y a un « apprentissage » des routes prises par ces paquets.
+                C’est donc un protocole très souple qui dépend très peu du réseau matériel. En revanche,
+                ce protocole ne permet pas d’assurer que tous les paquets soient transmis ou qu’ils sont
+                transmis dans le bon ordre. Le protocole TCP permet de combler ces lacunes.
+            </p>
+        </div>
+        <script type="text/javascript" src="../script.js"></script>
+    </body>
+</html>
