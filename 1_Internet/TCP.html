@@ -105,8 +105,16 @@
                 Un analyseur de paquets permet d'écouter les paquets échangés par un ordinateur et notamment les informations utilisées par le protocole TCP. Sur la capture suivante (logiciel Wireshark), on peut identifier les 3 premiers paquets permettant la demande de synchronisation et les 3 derniers permettant la demande de fin de connexion.
             </p>
             <img src="WireShark.png" id="wireshark">
+            <h2>Une alternative à TCP : le protocole UDP</h2>
+            <p>
+                Le point fort du protocole TCP est sa robustesse, au détriment de la rapidité.
+                Ce protocole est donc remplacé par le protocole UDP lorsqu'on a pas besoin de la robustesse de TCP.
+                C'est le cas par exemple pour les visioconférence, la lecture d'une vidéo en streaming ou bien lors de l'envoie de sa trace GPS lors d'une sortie en VTT.
+                Dans ces cas, la perte de quelques paquets n'est pas si grave, du moment qu'il reste suffisamment de données exploitables.
+            </p>
         </div>
         <script type="text/javascript" src="../script.js"></script>
         <script type="text/javascript" src="wireshark.js"></script>
+        <script type="text/javascript" src="Animations.js"></script>
     </body>
 </html>
