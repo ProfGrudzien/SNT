@@ -1,7 +1,7 @@
 .animation {
     border: 1px solid gray;
     width: 600px;
-    height: 440px;
+    height: 580px;
     margin: auto;
     padding: 20px;
     font-size: 16pt;
@@ -37,12 +37,8 @@ p.somme {
 
 svg {
     display: inline;
-    width: 484px;
-    height: 440px;
-}
-
-line {
-    stroke: black;
+    width: 600px;
+    height: 580px;
 }
 
 circle {
