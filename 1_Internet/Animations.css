@@ -43,8 +43,7 @@ svg {
 
 circle {
     stroke: black;
-    fill: #85c1e9;
-    cursor: pointer;
+    fill: white;
 }
 
 text {
