@@ -3,6 +3,7 @@
     <head>
         <meta charset="utf-8"/>
         <link rel="stylesheet" href="../style.css"/>
+        <link rel="stylesheet" href="Animations.css"/>
     </head>
     <body>
         <div class="main">
@@ -54,6 +55,9 @@
                 Lorsque l’utilisateur saisi une adresse URL, ces serveurs sont interrogés afin d’obtenir une adresse IP associée.
                 Dans le cadre d’une navigation habituelle, les adresses IP sont donc totalement invisible à l’utilisateur.
             </p>
+            <div class="animation" id="animationDNS">
+                <input type="button" value="▶" class="lancer"/>
+            </div>
             <p>
                 Sur Android, le serveurs DNS utilisé est celui de google, disponibles aux adresses IP 8.8.8.8 et 8.8.4.4.
                 D’autres serveurs DNS fournissent aussi des services supplémentaires, comme par exemple openDNS qui permet des corrections automatiques des noms de domaine ou un blocage de domaine par catégories (pour la mise en place d’un contrôle parentale par exemple.)
@@ -61,24 +65,24 @@
             <div class="exercice">
                 <ol>
                     <li>Télécharger et <b>enregistrer</b> le fichier <a href="network.fls">network.fls</a></li>
-                    <li>Ajouter un ordinateur et renommer le « serveur DNS ».</li>
+                    <li>Ajouter un ordinateur et renommer le <mark class="code">serveur DNS</mark>.</li>
                     <li>
                         Pour pouvoir le connecter au réseau, il faut le relier à l’un des routeurs.
                         Nous allons le connecter au routeur D :
                         <ol>
                             <li>Relier le serveur DNS au routeur D par un cable.</li>
                             <li>
-                                Attribuer au serveur DNS l’adresse IP 192.168.15.1 et la passerelle 192.168.15.254.<br/>
+                                Attribuer au serveur DNS l’adresse IP <mark class="code">192.168.15.1</mark> et la passerelle <mark class="code">192.168.15.254.</mark><br/>
                                 La passerelle est l'adresse du routeur qui permet de sortir du réseau local.
                             </li>
-                            <li>En mode simulation, vérifier à l’aide de la commande ping que le serveur DNS est accessible à partir de l’ordinateur « Emma ».</li>
+                            <li>En mode simulation, vérifier à l’aide de la commande <mark class="code">ping</mark> que le serveur DNS est accessible à partir de l’ordinateur « Emma ».</li>
                         </ol>
                     </li>
                     <li>
                         Installation du serveur DNS :
                         <ol>
-                            <li>En mode simulation, installer le logiciel serveur DNS sur l’ordinateur « serveur DNS ».</li>
-                            <li>Lancer l’application serveur DNS puis ajouter le nom de domaine netflix.fr associé à l’adresse IP de l’ordinateur « Serveur de Netflix ».</li>
+                            <li>En mode simulation, installer le logiciel serveur DNS sur l’ordinateur «&nbsp;serveur DNS&nbsp;».</li>
+                            <li>Lancer l’application serveur DNS puis ajouter le nom de domaine <mark class="code">netflix.fr</mark> associé à l’adresse IP de l’ordinateur « Serveur de Netflix ».</li>
                             <li>N'oubliez pas de cliquer sur le bouton « Démarrer » du serveur DNS avant de fermer la fenêtre.</li>
                         </ol>
                     </li>
@@ -86,18 +90,43 @@
                         Paramétrage des ordinateurs de Emma, Lee-Lou et Anna :
                         <ol>
                             <li>En mode conception, dans la configuration des trois ordinateurs, ajouter l’adresse IP de l’ordinateur « serveur DNS » dans la case correspondante.</li>
-                            <li>En mode simulation, à l’aide de la commande ping netflix.fr, vérifier que l’ordinateur « Emma » peut communiquer avec le serveur de Neflix sans rentrer son adresse IP.</li>
+                            <li>En mode simulation, à l’aide de la commande <mark class="code">ping netflix.fr</mark>, vérifier que l’ordinateur « Emma » peut communiquer avec le serveur de Neflix sans rentrer son adresse IP.</li>
                         </ol>
                     </li>
                     <li>
                         Utilisation d'un navigateur web.
                         <ol>
                             <li>Installer un « navigateur web » sur l'ordinateur d'Emma.</li>
-                            <li>Vous pouvez maintenant afficher la page web (déjà écrite sur le serveur de Netflix) en utilisant l'adresse URL www.netflix.fr comme vous le faite dans la réalité.</li>
+                            <li>Vous pouvez maintenant afficher la page web (déjà écrite sur le serveur de Netflix) en utilisant l'adresse URL <mark class="code">www.netflix.fr</mark> comme vous le faite dans la réalité.</li>
                         </ol>
                     </li>
                 </ol>
             </div>
+            <h2>Attaques sur serveur DNS</h2>
+            <p>
+                Etant très largement utilisés, les serveurs DNS font l’objet de différents types d’attaques, comme par exemple :
+            </p>
+            <h3>Empoisonnement du cache DNS</h3>
+            <p>
+                L’empoisonnement du cache DNS ou pollution de cache DNS (DNS cache poisoning ou
+                DNS cache pollution en anglais) est une technique permettant de leurrer les serveurs
+                DNS afin de leur faire croire qu’ils reçoivent une réponse valide à une requête qu’ils
+                effectuent, alors qu’elle est frauduleuse. Une fois que le serveur DNS a été empoisonné,
+                l’information est mise dans un cache, rendant ainsi vulnérables tous les utilisateurs de
+                ce serveur. Ce type d’attaque permet, par exemple, d’envoyer un utilisateur vers un faux
+                site dont le contenu peut servir à de l’hameçonnage ou comme vecteur de virus et autres
+                applications malveillantes.
+            </p>
+            <h3>Attaque par déni de service (DDoS)</h3>
+            <p>
+                L’attaque par déni de service consiste à submerger le serveur DNS par un nombre très
+                important de demandes simultanées. L’objectif est alors de rendre inutilisable le service
+                car le serveur n’est pas en mesure de répondre à toutes les requêtes. Pour parvenir à
+                envoyer un grand nombre de demande, les pirates informatiques utilisent au préalable
+                des virus pour infecter des milliers d’ordinateurs.
+            </p>
+        </div>
         <script type="text/javascript" src="../script.js"></script>
+        <script type="text/javascript" src="AnimationsDNS.js"></script>
     </body>
 </html>

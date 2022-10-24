@@ -4,28 +4,10 @@
     height: 650px;
     margin: auto;
     padding: 20px;
-    font-size: 16pt;
+    font-size: 14pt;
     font-family: monospace;
     position: relative;
-}
-
-#decomposer p {
-    position: absolute;
-    white-space: pre-wrap;
-}
-
-#addition p {
-    white-space: pre-wrap;
-    text-align: center;
-}
-
-#multiplication p {
-    white-space: pre-wrap;
-    text-align: center;
-}
-
-p.somme {
-    text-decoration: underline;
+    user-select: none;
 }
 
 .lancer {
