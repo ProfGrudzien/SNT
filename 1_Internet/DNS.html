@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="fr">
+    <head>
+        <meta charset="utf-8"/>
+        <link rel="stylesheet" href="../style.css"/>
+    </head>
+    <body>
+        <div class="main">
+            <h1>Adresse URL et serveur DNS</h1>
+            <h2>Les adresses URL</h2>
+            <p>
+                L’adresse IP est au centre du protocole TCP/IP et permet d’identifier le serveur ou l’ordinateur avec lequel on souhaite communiquer. Cette adresse est composée de 4 nombres entiers compris entre 0 et 255 pour la norme IPv4.
+            </p>
+            <p>
+                Cependant, de nos jours, nous n’avons pas besoin de connaître ces adresses IP pour accéder aux ressources désirées.
+                A la place des adresses IP, nous utilisons une adresse URL (Uniform Resource Locator).
+                Il s’agît d’une chaîne de caractères qui permet de localiser la ressource demandée.
+                Elle est formée :
+            </p>
+            <ul>
+                <li>du <b>nom du protocole</b> utilisé pour traiter les données</li>
+                <li>d’<b>un nom de domaine</b> : un nom qui représente un ensemble de serveur</li>
+                <li>d’éventuels compléments pour identifier la ressource sur ce nom de domaine identifiables par le symbole « / »</li>
+                <li>d’éventuels informations pour détailler une requête identifiables par le symbole « ? »</li>
+            </ul>
+            <p>
+                Par exemple, l’adresse https://fr.wikipedia.org/wiki/Domain_Name_System est formé :
+            </p>
+            <ul>
+                <li>du nom du protocole https</li>
+                <li>du nom de domaine fr.wikipedia.org (qui est en fait un sous domaine de wikipedia.org)</li>
+                <li>des 2 compléments : wiki et Domain_Name_System</li>
+                <li>d’aucune information pour détailler une requête</li>
+            </ul>
+            <p>
+                Lorsque le nom du protocole n'est pas écrit, le protocole https est utilisé.
+            </p>
+            <div class="exercice">
+                Identifier les différentes parties qui composent les adresses URL suivantes :
+                <ol>
+                    <li>https://www.netflix.com/browse</li>
+                    <li>https://www.youtube.com/results?search_query=dinosaure</li>
+                    <li>ftp://ftp.mozilla.org/pub/mozilla.org/firefox/releases/</li>
+                    <li>www.salto.fr/fargo-p_47441</li>
+                </ol>
+            </div>
+            <h2>Serveurs DNS</h2>
+            <p>
+                Il faut donc un lien entre les adresses IP des serveurs hébergeant les ressources et les adresses URL.
+                Des serveurs (dont l’adresse IP est fixe, publique et largement répandu) font office d’annuaire.
+                Ce sont les serveurs DNS.
+            </p>
+            <p>
+                Lorsque l’utilisateur saisi une adresse URL, ces serveurs sont interrogés afin d’obtenir une adresse IP associée.
+                Dans le cadre d’une navigation habituelle, les adresses IP sont donc totalement invisible à l’utilisateur.
+            </p>
+            <p>
+                Sur Android, le serveurs DNS utilisé est celui de google, disponibles aux adresses IP 8.8.8.8 et 8.8.4.4.
+                D’autres serveurs DNS fournissent aussi des services supplémentaires, comme par exemple openDNS qui permet des corrections automatiques des noms de domaine ou un blocage de domaine par catégories (pour la mise en place d’un contrôle parentale par exemple.)
+            </p>
+            <div class="exercice">
+                <ol>
+                    <li>Télécharger et <b>enregistrer</b> le fichier <a href="network.fls">network.fls</a></li>
+                    <li>Ajouter un ordinateur et renommer le « serveur DNS ».</li>
+                    <li>
+                        Pour pouvoir le connecter au réseau, il faut le relier à l’un des routeurs.
+                        Nous allons le connecter au routeur D :
+                        <ol>
+                            <li>Relier le serveur DNS au routeur D par un cable.</li>
+                            <li>
+                                Attribuer au serveur DNS l’adresse IP 192.168.15.1 et la passerelle 192.168.15.254.<br/>
+                                La passerelle est l'adresse du routeur qui permet de sortir du réseau local.
+                            </li>
+                            <li>En mode simulation, vérifier à l’aide de la commande ping que le serveur DNS est accessible à partir de l’ordinateur « Emma ».</li>
+                        </ol>
+                    </li>
+                    <li>
+                        Installation du serveur DNS :
+                        <ol>
+                            <li>En mode simulation, installer le logiciel serveur DNS sur l’ordinateur « serveur DNS ».</li>
+                            <li>Lancer l’application serveur DNS puis ajouter le nom de domaine netflix.fr associé à l’adresse IP de l’ordinateur « Serveur de Netflix ».</li>
+                            <li>N'oubliez pas de cliquer sur le bouton « Démarrer » du serveur DNS avant de fermer la fenêtre.</li>
+                        </ol>
+                    </li>
+                    <li>
+                        Paramétrage des ordinateurs de Emma, Lee-Lou et Anna :
+                        <ol>
+                            <li>En mode conception, dans la configuration des trois ordinateurs, ajouter l’adresse IP de l’ordinateur « serveur DNS » dans la case correspondante.</li>
+                            <li>En mode simulation, à l’aide de la commande ping netflix.fr, vérifier que l’ordinateur « Emma » peut communiquer avec le serveur de Neflix sans rentrer son adresse IP.</li>
+                        </ol>
+                    </li>
+                    <li>
+                        Utilisation d'un navigateur web.
+                        <ol>
+                            <li>Installer un « navigateur web » sur l'ordinateur d'Emma.</li>
+                            <li>Vous pouvez maintenant afficher la page web (déjà écrite sur le serveur de Netflix) en utilisant l'adresse URL www.netflix.fr comme vous le faite dans la réalité.</li>
+                        </ol>
+                    </li>
+                </ol>
+            </div>
+        <script type="text/javascript" src="../script.js"></script>
+    </body>
+</html>
