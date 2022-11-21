@@ -1,0 +1,49 @@
+table.matrice caption {
+    padding: 10px;
+    caption-side: bottom;
+}
+
+table.matrice {
+    border-collapse: separate;
+    table-layout: unset;
+    width: unset;
+    margin: auto;
+}
+
+table.matrice tr {
+}
+
+table.matrice td {
+    height: 60px;
+    width: 60px;
+    border: 1px solid black;
+    border-radius: 10px;
+}
+
+table.matrice td.blanc{
+    background-color: white
+}
+
+table.matrice td.rouge{
+    background-color: red
+}
+
+table.matrice td.vert{
+    background-color: green
+}
+
+table.matrice td.bleu{
+    background-color: blue
+}
+
+table.matrice td.rougeModele{
+    background-color: red
+}
+
+table.matrice td.vertModele{
+    background-color: green
+}
+
+table.matrice td.bleuModele{
+    background-color: blue
+}

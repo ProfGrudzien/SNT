@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="fr">
+    <head>
+        <meta charset="utf-8"/>
+        <link rel="stylesheet" href="../style.css"/>
+        <link rel="stylesheet" href="constructionImage.css"/>
+    </head>
+    <body>
+        <div class="main">
+            <h1>Construction d’un image numérique</h1>
+            <p>
+                Un appareil photo numérique permet de capter une image puis de convertir les données en binaire.
+                Ces informations sont alors stockées sur un support numérique pour être par exemple restituées sur un écran.
+            </p>
+            <p>
+                Le fonctionnement d’un appareil photo numérique est fondé sur les <mark>photo-sites</mark>.
+                Les photo-sites sont des capteurs d’intensité lumineuse.
+                Ils convertissent l’énergie lumineuse (photons) en énergie électrique (électrons) grâce à un semi-conducteur, généralement
+                du silicium.
+                Le courant électrique issu d’un photo-site est proportionnel à la quantité de lumière reçu.
+                Ils agissent de la même façon que les panneaux photovoltaïques produisant de l’électricité.
+            </p>
+            <p>
+                Pour réaliser une photographie numérique, il faut des millions de photo-sites.
+                Ces photo-sites sont répartis sur une grille que l’on appelle une <mark>matrice</mark>.
+                La taille réduite d’un photo-site, quelques micromètres (μm), permet à une matrice de petite taille (de l’ordre du cm) de contenir ces millions de photo-sites.
+            </p>
+            <table class='matrice'>
+                <caption>Schéma d’une matrice de photo-sites.</caption>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+            </table>
+            <p>
+Comme les photo-sites sont uniquement sensibles à l’intensité lumineuse et non à la couleur, chaque photo-site est recouvert par un filtre de couleur rouge, vert ou bleu ne laissant passer qu’une seule de ces trois couleurs.
+Ces trois couleurs permettrons ensuite de reconstituer tout le spectre visible par l’œuil humain. Les filtres sont répartis sur la matrice des photo-sites selon le principe du <mark>filtre de Bayer</mark>.
+            </p>
+            <div class="exercice">
+                Compléter la matrice de photo-sites ci-dessous en répétant le motif des 4 pixels coloriés pour obtenir le filtre de Bayer.
+                <table class='matrice' id="Bayer">
+                    <caption>Filtre de Bayer</caption>
+                    <tr>
+                        <td class="vertModele"></td>
+                        <td class="rougeModele"></td>
+                        <td class="blanc"></td>
+                        <td class="blanc"></td>
+                        <td class="blanc"></td>
+                        <td class="blanc"></td>
+                        <td class="blanc"></td>
+                        <td class="blanc"></td>
+                    </tr>
+                    <tr>
+                        <td class="bleuModele"></td>
+                        <td class="vertModele"></td>
+                        <td class="blanc"></td>
+                        <td class="blanc"></td>
+                        <td class="blanc"></td>
+                        <td class="blanc"></td>
+                        <td class="blanc"></td>
+                        <td class="blanc"></td>
+                    </tr>
+                    <tr>
+                        <td class="blanc"></td>
+                        <td class="blanc"></td>
+                        <td class="blanc"></td>
+                        <td class="blanc"></td>
+                        <td class="blanc"></td>
+                        <td class="blanc"></td>
+                        <td class="blanc"></td>
+                        <td class="blanc"></td>
+                    </tr>
+                    <tr>
+                        <td class="blanc"></td>
+                        <td class="blanc"></td>
+                        <td class="blanc"></td>
+                        <td class="blanc"></td>
+                        <td class="blanc"></td>
+                        <td class="blanc"></td>
+                        <td class="blanc"></td>
+                        <td class="blanc"></td>
+                    </tr>
+                </table>
+                <p class="centrer"><input type="button" id="btnBayer" value="Vérifier" /></p>
+                <p id="pBayer" class="centrer"></p>
+            </div>
+            <p>
+                On peut observer que le nombre de photo-sites avec un filtre vert est deux fois plus important que le nombre de photo-sites avec un filtre rouge ou que de photo-sites avec un filtre bleu. 
+                En effet, il fallait 4 photo-sites pour créer un motif carré. Pour les colorier avec 3 couleurs, il faut en répéter une. Le vert a été choisit car l’œil humain est plus sensible au vert qu’aux autres couleurs.
+            </p>
+        </div>
+        <script type="text/javascript" src="../script.js"></script>
+        <script type="text/javascript" src="Bayer.js"></script>
+    </body>
+</html>
