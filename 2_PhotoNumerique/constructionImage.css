@@ -6,7 +6,7 @@ table.matrice caption {
 table.matrice {
     border-collapse: separate;
     table-layout: unset;
-    width: unset;
+    width: auto;
     margin: auto;
 }
 
@@ -25,15 +25,21 @@ table.matrice td.blanc{
 }
 
 table.matrice td.rouge{
-    background-color: red
+    background-color: red;
+    color: white;
+    font-size: 20pt;
 }
 
 table.matrice td.vert{
-    background-color: green
+    background-color: green;
+    color: white;
+    font-size: 20pt;
 }
 
 table.matrice td.bleu{
-    background-color: blue
+    background-color: blue;
+    color: white;
+    font-size: 20pt;
 }
 
 table.matrice td.rougeModele{
@@ -46,4 +52,25 @@ table.matrice td.vertModele{
 
 table.matrice td.bleuModele{
     background-color: blue
+}
+
+table.matrice td.cadreViolet{
+    border: 4px solid purple;
+    height: 56px;
+    width: 56px;
+    color: purple;
+}
+
+table.matrice td.cadreJaune{
+    border: 4px solid orange;
+    height: 56px;
+    width: 56px;
+    color: orange;
+}
+
+table.matrice td.cadreMarron{
+    border: 4px solid gray;
+    height: 56px;
+    width: 56px;
+    color: gray;
 }
