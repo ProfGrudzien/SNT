@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="fr">
+    <head>
+        <meta charset="utf-8"/>
+        <link rel="stylesheet" href="../style.css"/>
+    </head>
+    <body>
+        <div class="main">
+            <h1>Appliquer un traitement à une image</h1>
+            <p>
+                Un fichier image contient les valeurs des composantes (rouge, vert, bleu) de chaque pixel.
+                En modifiant ces valeurs, on modifie la couleur des pixels de l'image.
+                Souvent, on applique une formule mathématique pour changer les valeurs des composantes d'un pixel à partir de ces valeurs ou des valeurs des composantes des pixels voisins.
+                On parle alors de <mark>filtre</mark>.
+            </p>
+            <h2>Avec un logiciel adapté</h2>
+            <p>
+                Des logiciels de retouche permettent d'appliquer ces filtres. Voici par exemple quelques filtres proposés par le logiciel libre <mark>Gimp</mark>.
+                <img src="filtres.png">
+            </p>
+            <p>
+                Ce logiciel permet par exemple de modifier le contraste de l'image, sa luminosité, ...
+                <img src="courbe1.png">
+                <img src="courbe2.png">
+            </p>
+            <h2>Avec Python</h2>
+            <p>
+                Il est possible de créer des filtres en utilisant un langage de programmation.
+                En python, il faut commencer par importer un module qui contient toutes les fonctions pour traiter une image.
+                Il s’agît du module PIL.
+                Pour importer ce module, il suffit d’ajouter la ligne :
+            </p>
+            <div class="algo">
+                <input type="button" class="copier" value="📑" title="copier">
+                <p class="code">
+                    from PIL import Image
+                </p>
+            </div>
+            <p>
+                Ensuite, pour ouvrir l’image <mark class="code"><a href="Chapman.jpg">Chapman.jpg</a></mark>, on utilise l’instruction :
+            </p>
+            <div class="algo">
+                <input type="button" class="copier" value="📑" title="copier">
+                <p class="code">
+                    img = Image.open("Chapman.jpg")
+                </p>
+            </div>
+            <p>
+                On peut désormais accéder aux informations sur les pixels de cette image.
+                Par exemple, on peut récupérer le nombre de pixels sur la largeur et sur la hauteur de l’image :
+            </p>
+            <div class="algo">
+                <input type="button" class="copier" value="📑" title="copier">
+                <p class="code">
+                    largeur, hauteur = img.size<br/>
+                    print(largeur, "x", hauteur)
+                </p>
+            </div>
+            <p>
+                On en profite donc pour créer une image de même taille que l’image de départ afin d’y enregistrer les traitements que l’on va effectuer.
+            </p>
+            <div class="algo">
+                <input type="button" class="copier" value="📑" title="copier">
+                <p class="code">
+                    imgR = Image.new("RGB", (largeur, hauteur))
+                </p>
+            </div>
+            <p>
+                Enfin, le traitement se fait à l’aide d’une double boucle qui permet de parcourir toutes les lignes et toutes les colonnes de l’image. Dans cette double boucle, l’instruction <mark class="code">R, V, B = img.getpixel((x, y))</mark> permet de récupérer les valeurs des composantes du pixel placé à la ligne <mark class="code">x</mark> et à la colonne <mark class="code">y</mark>, alors que l’instruction <mark class="code">img.putpixel((x, y), (R, V, B))</mark> permet d’écrire les valeurs des composantes.
+            </p>
+            <p>
+                Voici un exemple où l’on ne garde que la composante rouge de l’image :
+            </p>
+            <div class="algo">
+                <input type="button" class="copier" value="📑" title="copier">
+                <p class="code">
+                    for x in range(largeur) :<br/>
+                    &nbsp;&nbsp;&nbsp;&nbsp;for y in range(hauteur) :<br/>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;R, V, B = img.getpixel((x, y))<br/>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;imgR.putpixel((x, y), (R, 0, 0))
+                </p>
+            </div>
+            <p>
+                Pour finir, on peut enregistrer le résultat grâce à l’instruction :
+            </p>
+            <div class="algo">
+                <input type="button" class="copier" value="📑" title="copier">
+                <p class="code">
+                    imgR.save("ChapmanRouge.png")
+                </p>
+            </div>
+            <h2>Réalisation de quelques filtres</h2>
+            <h3>Sur les composantes des images</h3>
+            <div class="exercice">
+                L'exemple ci-dessus permet d'extraire uniquement la composante rouge de l'image. Modifier le programme pour extraire :
+                <ol>
+                    <li>uniquement la composante verte</li>
+                    <li>uniquement la composante bleue</li>
+                </ol>
+            </div>
+            <div class="exercice">
+                Ecrire un programme permettant de permutter les valeurs des composantes. Par exemple, la composante rouge est envoyé sur la composante verte, la verte sur la bleue et la bleue sur la rouge.
+            </div>
+            <h3>Négatif</h3>
+            <div class="exercice">
+                Le négatif d'une image est l'image obtenu en repmplaçant la valeur de chaque composante de chaque pixel par son complément à 255. Ecrire un programme qui construit le ngatif d'une image.
+            </div>
+            <h3>Noir et Blanc / Niveau de gris</h3>
+            <p>
+                Le gris s’obtient en donnant à un pixel la même valeur à ces trois composantes. Une méthode pour convertir une image en couleur en une image en niveaux de gris est de remplacer les valeurs des trois composantes par la moyenne de ces valeurs.
+            </p>
+            <div class="exercice">
+                Ecrire un programme permettant de convertir une image en niveau de gris.
+            </div>
+            <p>
+                Une image en noir en blanc est composée uniquement de pixels noirs et de pixels blancs.
+            </p>
+            <div class="exercice">
+                Ecrire un programme permettant de convertir une image en noir et blanc :
+                <ul>
+                    <li></li>
+                        les pixels qui ont un niveau de gris inférieur à 128 seront remplacés par des pixels noirs ;
+                    </li>les autres par des pixels blancs.</li>
+                </ul>
+            </div>
+            <h3>Sin City</h3>
+            <p>
+                Le film Sin City est un film à la frontière du noir et blanc (niveaux de gris pour être plus précis) et de la couleur. En effet, sur chaque séquence, une seule couleur est conservée, les autres sont converties en niveau de gris. Par exemple, au moment où l'actrice principale apparaît sur le balcon d'un gratte-ciel, toute l'image est en niveaux de gris à l'exception de la robe rouge de l'actrice. Cela apporte une ambiance particulièrement sombre au film.
+            </p>
+            <div class="exercice">
+                Ecrire un programme permettant d'obtenir l'effet décris dans ce film. Pour identifier les pixels rouges, on détermine ceux qui ont une composante rouge bien supérieur à la composante verte et à la composante bleue.<br/>
+                Vous utiliserez l'image <a href="London.jpg">London.jpg</a> ou bien l'image <a href="Londres.jpg">Londres.jpg</a>.
+            </div>
+        </div>
+        <script type="text/javascript" src="../script.js"></script>
+    </body>
+</html>
