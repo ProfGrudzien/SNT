@@ -7,7 +7,7 @@
     </head>
     <body>
         <div class="main">
-            <h1>Construction d’un image numérique</h1>
+            <h1>Construction d’une image numérique</h1>
             <h2>Capter une image à l’aide d’un appareil photo numérique.</h2>
             <p>
                 Un appareil photo numérique permet de capter une image puis de convertir les données en binaire.
@@ -18,7 +18,7 @@
                 Les photo-sites sont des capteurs d’intensité lumineuse.
                 Ils convertissent l’énergie lumineuse (photons) en énergie électrique (électrons) grâce à un semi-conducteur, généralement
                 du silicium.
-                Le courant électrique issu d’un photo-site est proportionnel à la quantité de lumière reçu.
+                Le courant électrique issu d’un photo-site est proportionnel à la quantité de lumière reçue.
                 Ils agissent de la même façon que les panneaux photovoltaïques produisant de l’électricité.
             </p>
             <p>
@@ -71,7 +71,7 @@
             </table>
             <p>
 Comme les photo-sites sont uniquement sensibles à l’intensité lumineuse et non à la couleur, chaque photo-site est recouvert par un filtre de couleur rouge, vert ou bleu ne laissant passer qu’une seule de ces trois couleurs.
-Ces trois couleurs permettrons ensuite de reconstituer tout le spectre visible par l’œuil humain. Les filtres sont répartis sur la matrice des photo-sites selon le principe du <mark>filtre de Bayer</mark>.
+Ces trois couleurs permettrons ensuite de reconstituer tout les couleurs du spectre visible par l’œuil humain. Les filtres sont répartis sur la matrice des photo-sites selon le principe du <mark>filtre de Bayer</mark>.
             </p>
             <div class="exercice">
                 Compléter la matrice de photo-sites ci-dessous en répétant le motif des 4 pixels coloriés pour obtenir le filtre de Bayer.
@@ -122,7 +122,7 @@ Ces trois couleurs permettrons ensuite de reconstituer tout le spectre visible p
                 <p id="pBayer" class="centrer"></p>
             </div>
             <p>
-                On peut observer que le nombre de photo-sites avec un filtre vert est deux fois plus important que le nombre de photo-sites avec un filtre rouge ou que de photo-sites avec un filtre bleu. 
+                On peut observer que le nombre de photo-sites avec un filtre vert est deux fois plus importants que le nombre de photo-sites avec un filtre rouge ou que de photo-sites avec un filtre bleu. 
                 En effet, il fallait 4 photo-sites pour créer un motif carré. Pour les colorier avec 3 couleurs, il faut en répéter une. Le vert a été choisit car l’œil humain est plus sensible au vert qu’aux autres couleurs.
             </p>
             <h2>Construire le fichier image</h2>
@@ -133,7 +133,7 @@ Ces trois couleurs permettrons ensuite de reconstituer tout le spectre visible p
                 C’est le format le plus proche de la prise de vue et donc celui le plus souvent utilisé par les photographes professionnels.
             </p>
             <p>
-                Sur un ordinateur, les images sont découpées en tout petit carrés de couleur appelés des <mark>pixels</mark>.
+                Sur un ordinateur, les images sont découpées en tous petits carrés de couleur appelés des <mark>pixels</mark>.
                 Ensuite, la couleur de ces petits carrés est décomposée selon trois canaux : rouge, vert et bleu.
                 Le trio de valeurs numériques obtenu est alors converti en binaire.
                 Souvent, les composantes (rouge, vert et bleu) sont codées par des nombres entiers compris entre 0 et 255.
@@ -142,12 +142,12 @@ Ces trois couleurs permettrons ensuite de reconstituer tout le spectre visible p
             <p>
                 Le passage entre un fichier RAW et des pixels utilisables par l’ordinateur est appelé <mark>dématriçage</mark>.
                 Cette étape se fait à l’aide d’un algorithme qui essaie de reconstituer les couleurs de la photographie à l’aide des valeurs obtenues par les capteurs. 
-                Une première approche serait de rassembler les photo-sites par carrés de 4 photo-sites. La couleur rouge et la couleur bleue serait alors directement lu sur les photo-sites concernés, alors que la couleur verte serait la moyenne des données des deux photo-sites avec un filtre vert. Avec cette approche, on obtiendrai 4 fois moins de pixels que de photo-sites de départ.
+                Une première approche serait de rassembler les photo-sites par carrés de 4 photo-sites. La couleur rouge et la couleur bleue serait alors directement lues sur les photo-sites concernés, alors que la couleur verte serait la moyenne des données des deux photo-sites avec un filtre vert. Avec cette approche, on obtiendrait 4 fois moins de pixels que de photo-sites de départ.
             </p>
             <p>
                 L’approche retenu est d’attribuer un pixel par photo-site.
-                Dans chaque cas, l’une des trois composantes est connue puisqu’elle correspond à la couleur du filtre de ce photo-site.
-                Les deux autres composantes sont obtenues en réalisant la moyenne des données des 8 photo-sites voisins.
+                Dans chaque cas, l’une des trois composantes est connue puisque la couleur correspond à la couleur du filtre de ce photo-site.
+                Les deux autres composantes sont obtenues en réalisant la moyenne des données des 8 photo-sites voisins ayant le bon filtre.
             </p>
             <div class="exercice">
                 <table class='matrice'>
@@ -195,7 +195,7 @@ Ces trois couleurs permettrons ensuite de reconstituer tout le spectre visible p
                 </table>
                 <ol>
                     <li>
-                        Donner les valeurs des 3 composantes des pixels associés aux photo-sites encadrés en couleurs.
+                        Donner les valeurs des 3 composantes des pixels associés aux photo-sites encadrés en couleurs (violet, orange et gris).
                     </li>
                     <li>
                         De quelles couleurs sont ces 3 pixels ?
@@ -214,11 +214,11 @@ Ces trois couleurs permettrons ensuite de reconstituer tout le spectre visible p
             </p>
             <h2>Nombre de pixels, définition et résolution</h2>
             <p>
-Pour évaluer la qualité d’une photo, on détermine sa <mark>définition</mark>, c’est-à-dire le nombre de pixels qui la compose.
-Une image de 4896 lignes de 3672 pixels a pour définition de 4896 × 3672 = 17 978 112 pixels soit environ 18 Mégapixels.
-La définition d’une photo permet de prévoir la taille (en Mo) du fichier.
-En effet, en couleurs vraies, chaque pixel est codé sur 3 octets.
-Sans compression, l’image précédente nécessiterait plus de 54 Mo d’espace sur le disque.
+                Pour évaluer la qualité d’une photo, on détermine sa <mark>définition</mark>, c’est-à-dire le nombre de pixels qui la compose.
+                Une image de 4896 lignes de 3672 pixels a pour définition de 4896 × 3672 = 17 978 112 pixels soit environ 18 Mégapixels.
+                La définition d’une photo permet de prévoir la taille (en Mo) du fichier.
+                En effet, en couleurs vraies, chaque pixel est codé sur 3 octets.
+                Sans compression, l’image précédente nécessiterait environ 54 Mo d’espace sur le disque.
             </p>
             <p>
 Il ne faut pas confondre cette définition avec la <mark>résolution</mark> qui permet d’estimer la qualité d’une impression ou d’un écran.
@@ -226,7 +226,7 @@ La résolution d’une image est égale au nombre de pixels par unité de longue
 Elle est exprimée en dots per inch (DPI) ou PPP pour point par pouce en français.
             </p>
             <div class="exercice">
-                On considère une image de définition 800×533 que l’on imprime sur du papier photo de taille 15×10 (en cm). Calculer la résolution de cette image en ppp (rappel 1 pouce = 2,54 cm).
+                On considère une image de définition 800 × 533 que l’on imprime sur du papier photo de taille 15 × 10 (en cm). Calculer la résolution de cette image en ppp (rappel 1 pouce = 2,54 cm).
             </div>
             <div class="exercice">
                 Sachant que l’on estime que pour avoir une impression de qualité il faut atteindre une résolution de 300 ppp, calculer la définition minimale d’une image dans le cas d’une
