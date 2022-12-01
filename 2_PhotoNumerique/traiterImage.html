@@ -62,11 +62,11 @@
             <div class="algo">
                 <input type="button" class="copier" value="📑" title="copier">
                 <p class="code">
-                    imgR = Image.new("RGB", (largeur, hauteur))
+                    resultat = Image.new("RGB", (largeur, hauteur))
                 </p>
             </div>
             <p>
-                Enfin, le traitement se fait à l’aide d’une double boucle qui permet de parcourir toutes les lignes et toutes les colonnes de l’image. Dans cette double boucle, l’instruction <mark class="code">R, V, B = img.getpixel((x, y))</mark> permet de récupérer les valeurs des composantes du pixel placé à la ligne <mark class="code">x</mark> et à la colonne <mark class="code">y</mark>, alors que l’instruction <mark class="code">img.putpixel((x, y), (R, V, B))</mark> permet d’écrire les valeurs des composantes.
+                Enfin, le traitement se fait à l’aide d’une double boucle qui permet de parcourir toutes les lignes et toutes les colonnes de l’image. Dans cette double boucle, l’instruction <mark class="code">R, V, B = img.getpixel((x, y))</mark> permet de récupérer les valeurs des composantes du pixel placé à la ligne <mark class="code">x</mark> et à la colonne <mark class="code">y</mark>, alors que l’instruction <mark class="code">resultat.putpixel((x, y), (R, V, B))</mark> permet d’écrire les valeurs des composantes.
             </p>
             <p>
                 Voici un exemple où l’on ne garde que la composante rouge de l’image :
@@ -77,7 +77,7 @@
                     for x in range(largeur) :<br/>
                     &nbsp;&nbsp;&nbsp;&nbsp;for y in range(hauteur) :<br/>
                     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;R, V, B = img.getpixel((x, y))<br/>
-                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;imgR.putpixel((x, y), (R, 0, 0))
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;resultat.putpixel((x, y), (R, 0, 0))
                 </p>
             </div>
             <p>
@@ -86,7 +86,7 @@
             <div class="algo">
                 <input type="button" class="copier" value="📑" title="copier">
                 <p class="code">
-                    imgR.save("ChapmanRouge.png")
+                    resultat.save("ChapmanRouge.png")
                 </p>
             </div>
             <h2>Réalisation de quelques filtres</h2>
@@ -118,9 +118,8 @@
             <div class="exercice">
                 Ecrire un programme permettant de convertir une image en noir et blanc :
                 <ul>
-                    <li></li>
-                        les pixels qui ont un niveau de gris inférieur à 128 seront remplacés par des pixels noirs ;
-                    </li>les autres par des pixels blancs.</li>
+                    <li>les pixels qui ont un niveau de gris inférieur à 128 seront remplacés par des pixels noirs ;</li>
+                    <li>les autres par des pixels blancs.</li>
                 </ul>
             </div>
             <h3>Sin City</h3>
