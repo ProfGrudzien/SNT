@@ -12,10 +12,10 @@ function changeCouleur(event) {
     }
 }
 
-function verifier(event) {
+function verifierBayer(event) {
     const texte = Array.from(tableBayer.getElementsByTagName("TD"))
-     .map(element => element.className == "blanc" ? "w" : element.className[0])
-     .join("")
+                       .map(element => element.className == "blanc" ? "w" : element.className[0])
+                       .join("")
     if (texte == "vrvrvrvrbvbvbvbvvrvrvrvrbvbvbvbv") {
         btnBayer.style.display = "None"
         pBayer.textContent = "Bravo, vous avec reconstité le filtre de Bayer."
@@ -25,4 +25,4 @@ function verifier(event) {
 }
 
 tableBayer.addEventListener("click", changeCouleur)
-btnBayer.addEventListener("click", verifier)
+btnBayer.addEventListener("click", verifierBayer)

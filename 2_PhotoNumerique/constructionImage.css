@@ -54,23 +54,31 @@ table.matrice td.bleuModele{
     background-color: blue
 }
 
-table.matrice td.cadreViolet{
-    border: 4px solid purple;
-    height: 56px;
-    width: 56px;
-    color: purple;
+table.invisible, table.invisible td {
+    table-layout: unset;
+    border: none;
+    width: max-content;
+    margin: auto;
 }
 
-table.matrice td.cadreJaune{
-    border: 4px solid orange;
-    height: 56px;
-    width: 56px;
-    color: orange;
+input:invalid {
+  border-color: red;
+  color: red;
 }
 
-table.matrice td.cadreMarron{
-    border: 4px solid gray;
-    height: 56px;
-    width: 56px;
-    color: gray;
+p.erreur {
+    text-align: center;
+    color: red;
+}
+
+p.juste {
+    text-align: center;
+    color: green;
+}
+
+#divComposantes {
+    width: 100px;
+    height: 0px;
+    margin: 0 auto;
+    background-color: red;
 }

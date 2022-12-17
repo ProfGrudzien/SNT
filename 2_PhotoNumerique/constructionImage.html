@@ -150,57 +150,80 @@ Ces trois couleurs permettrons ensuite de reconstituer tout les couleurs du spec
                 Les deux autres composantes sont obtenues en réalisant la moyenne des données des 8 photo-sites voisins ayant le bon filtre.
             </p>
             <div class="exercice">
-                <table class='matrice'>
+                <table class='matrice' id="tableComposantes">
                     <caption>Dématriçage</caption>
                     <tr>
-                        <td class="vert">6</td>
-                        <td class="rouge">214</td>
-                        <td class="vert">194</td>
-                        <td class="rouge">48</td>
-                        <td class="vert">109</td>
-                        <td class="rouge">24</td>
-                        <td class="vert">62</td>
-                        <td class="rouge">1</td>
+                        <td class="vert"></td>
+                        <td class="rouge"></td>
+                        <td class="vert"></td>
+                        <td class="rouge"></td>
+                        <td class="vert"></td>
+                        <td class="rouge"></td>
+                        <td class="vert"></td>
+                        <td class="rouge"></td>
                     </tr>
                     <tr>
-                        <td class="bleu">70</td>
-                        <td class="vert">162</td>
-                        <td class="bleu">112</td>
-                        <td class="vert cadreViolet">143</td>
-                        <td class="bleu">168</td>
-                        <td class="vert">40</td>
-                        <td class="bleu cadreJaune">205</td>
-                        <td class="vert">35</td>
+                        <td class="bleu"></td>
+                        <td class="vert"></td>
+                        <td class="bleu"></td>
+                        <td class="vert"></td>
+                        <td class="bleu"></td>
+                        <td class="vert"></td>
+                        <td class="bleu"></td>
+                        <td class="vert"></td>
                     </tr>
                     <tr>
-                        <td class="vert">140</td>
-                        <td class="rouge">7</td>
-                        <td class="vert">236</td>
-                        <td class="rouge">231</td>
-                        <td class="vert">7</td>
-                        <td class="rouge cadreMarron">120</td>
-                        <td class="vert">44</td>
-                        <td class="rouge">71</td>
+                        <td class="vert"></td>
+                        <td class="rouge"></td>
+                        <td class="vert"></td>
+                        <td class="rouge"></td>
+                        <td class="vert"></td>
+                        <td class="rouge"></td>
+                        <td class="vert"></td>
+                        <td class="rouge"></td>
                     </tr>
                     <tr>
-                        <td class="bleu">41</td>
-                        <td class="vert">2</td>
-                        <td class="bleu">199</td>
-                        <td class="vert">81</td>
-                        <td class="bleu">188</td>
-                        <td class="vert">3</td>
-                        <td class="bleu">52</td>
-                        <td class="vert">175</td>
+                        <td class="bleu"></td>
+                        <td class="vert"></td>
+                        <td class="bleu"></td>
+                        <td class="vert"></td>
+                        <td class="bleu"></td>
+                        <td class="vert"></td>
+                        <td class="bleu"></td>
+                        <td class="vert"></td>
                     </tr>
                 </table>
-                <ol>
-                    <li>
-                        Donner les valeurs des 3 composantes des pixels associés aux photo-sites encadrés en couleurs (violet, orange et gris).
-                    </li>
-                    <li>
-                        De quelles couleurs sont ces 3 pixels ?
-                    </li>
-                </ol>
+                <p>Donner les valeurs des 3 composantes du pixel associé au photo-site en gras.</p>
+                <table class="invisible">
+                    <tr>
+                        <td>Composante rouge :</td>
+                        <td>
+                            <label for="composanteRouge">R =</label>
+                            <input type="number" id="composanteRouge" min=0 max=255>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Composante verte : </td>
+                        <td>
+                            <label for="composanteVerte">V =</label>
+                            <input type="number" id="composanteVerte" min=0 max=255>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Composante bleue : </td>
+                        <td>
+                            <label for="composanteBleue">B =</label>
+                            <input type="number" id="composanteBleue" min=0 max=255>
+                        </td>
+                    </tr>
+                </table>
+                <p class="centrer">
+                    <input type="button" value="vérifier" id=btnComposantes>
+                    <input type="button" value="correction" id=btnCorrectionComposantes>
+                </p>
+                <p id="pComposantes"></p>
+                <div id="divCorrectionComposantes"></div>
+                <div id="divComposantes"></div>
             </div>
             <h2>Ecrire le fichier image</h2>
             <p>
@@ -208,7 +231,7 @@ Ces trois couleurs permettrons ensuite de reconstituer tout les couleurs du spec
                 Il ne reste plus qu’à choisir un format pour enregistrer ces images.
                 La plupart du temps, le format JPEG est choisit.
                 Il s’agit d’un format privilégiant la taille du fichier grâce à une compression.
-                Cette compression est dite avec pertes puisque les valeurs des composantes (rouge, verte et bleu) des pixels vont être à nouveau modifiées.
+                Cette compression est dite avec pertes puisque les valeurs des composantes (rouge, verte et bleue) des pixels vont être à nouveau modifiées.
                 Il faut garder à l’esprit que ces valeurs étaient déjà des valeurs approchées, extrapolées à partir des intensités des photo-sites voisins.
                 Ce fichier pourra être utilisé pour appliquer d’autres traitements à la photographie, à l’aide de filtres par exemple, dans un logiciel adapté.
             </p>
@@ -242,5 +265,6 @@ impression sur du papier photo 15 × 10 (en cm).
         </div>
         <script type="text/javascript" src="../script.js"></script>
         <script type="text/javascript" src="Bayer.js"></script>
+        <script type="text/javascript" src="composantes.js"></script>
     </body>
 </html>
