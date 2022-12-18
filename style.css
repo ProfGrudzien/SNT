@@ -164,6 +164,10 @@ mark.code{
     padding: 0px 3px;
 }
 
+mark.def {
+    cursor: default;
+}
+
 .centrer {
     text-align: center;
 }
