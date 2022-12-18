@@ -14,7 +14,7 @@
                 Ces informations sont alors stockées sur un support numérique pour être par exemple restituées sur un écran.
             </p>
             <p>
-                Le fonctionnement d’un appareil photo numérique est fondé sur les <mark>photo-sites</mark>.
+                Le fonctionnement d’un appareil photo numérique est fondé sur les <mark class="def" title="capteurs d’intensité lumineuse">photo-sites</mark>.
                 Les photo-sites sont des capteurs d’intensité lumineuse.
                 Ils convertissent l’énergie lumineuse (photons) en énergie électrique (électrons) grâce à un semi-conducteur, généralement
                 du silicium.
@@ -23,7 +23,7 @@
             </p>
             <p>
                 Pour réaliser une photographie numérique, il faut des millions de photo-sites.
-                Ces photo-sites sont répartis sur une grille que l’on appelle une <mark>matrice</mark>.
+                Ces photo-sites sont répartis sur une grille que l’on appelle une <mark class="def" title="grille sur laquelle sont répartis les photo-sites">matrice</mark>.
                 La taille réduite d’un photo-site, quelques micromètres (μm), permet à une matrice de petite taille (de l’ordre du cm) de contenir ces millions de photo-sites.
             </p>
             <table class='matrice'>
@@ -71,7 +71,7 @@
             </table>
             <p>
 Comme les photo-sites sont uniquement sensibles à l’intensité lumineuse et non à la couleur, chaque photo-site est recouvert par un filtre de couleur rouge, vert ou bleu ne laissant passer qu’une seule de ces trois couleurs.
-Ces trois couleurs permettrons ensuite de reconstituer tout les couleurs du spectre visible par l’œuil humain. Les filtres sont répartis sur la matrice des photo-sites selon le principe du <mark>filtre de Bayer</mark>.
+Ces trois couleurs permettrons ensuite de reconstituer tout les couleurs du spectre visible par l’œuil humain. Les filtres sont répartis sur la matrice des photo-sites selon le principe du <mark class="def" title="mosaïque de filtres colorés placée sur les photosites">filtre de Bayer</mark>.
             </p>
             <div class="exercice">
                 Compléter la matrice de photo-sites ci-dessous en répétant le motif des 4 pixels coloriés pour obtenir le filtre de Bayer.
@@ -128,19 +128,19 @@ Ces trois couleurs permettrons ensuite de reconstituer tout les couleurs du spec
             <h2>Construire le fichier image</h2>
             <p>
                 Les valeurs issues des photo-sites sont des valeurs décimales.
-                La tension éléctrique (en Volt V), proportionnelles à intensité lumineuse (en candela cd), doit être convertie en nombre entier par <mark>échantillonnage</mark> avant d’être convertie en binaire pour être stockée sur un support numérique.
-                Le fichier obtenu est un fichier brut (<mark>RAW</mark>).
+                La tension éléctrique (en Volt V), proportionnelles à intensité lumineuse (en candela cd), doit être convertie en nombre entier par <mark class="def" title="moyen mathématiques de transformer des nombres décimaux en nombres entier. Par exemple, en multipliant des valeurs comprises entre 0 et 0,2 par 1280 puis en prenant la valeur entière, on obtient des valeurs comprises entre 0 et 255. (échantillonnage sur 256 niveaux)">échantillonnage</mark> avant d’être convertie en binaire pour être stockée sur un support numérique.
+                Le fichier obtenu est un fichier brut (<mark class="def" title="format de photo brut, c'est-à-dire sans aucun autre traitement que l'échantillonnage">RAW</mark>).
                 C’est le format le plus proche de la prise de vue et donc celui le plus souvent utilisé par les photographes professionnels.
             </p>
             <p>
-                Sur un ordinateur, les images sont découpées en tous petits carrés de couleur appelés des <mark>pixels</mark>.
+                Sur un ordinateur, les images sont découpées en tous petits carrés de couleur appelés des <mark class="def" title="carrés d'une seule couleur chacun qui permet de construire une image numérique">pixels</mark>.
                 Ensuite, la couleur de ces petits carrés est décomposée selon trois canaux : rouge, vert et bleu.
                 Le trio de valeurs numériques obtenu est alors converti en binaire.
                 Souvent, les composantes (rouge, vert et bleu) sont codées par des nombres entiers compris entre 0 et 255.
-                Cela permet de coder 256<sup>3</sup> = 16 777 216 couleurs différentes (on parle alors de <mark>couleurs vraies</mark>).
+                Cela permet de coder 256<sup>3</sup> = 16 777 216 couleurs différentes (on parle alors de <mark class="def" title="couleurs codées sur 3 octets en informatique">couleurs vraies</mark>).
             </p>
             <p>
-                Le passage entre un fichier RAW et des pixels utilisables par l’ordinateur est appelé <mark>dématriçage</mark>.
+                Le passage entre un fichier RAW et des pixels utilisables par l’ordinateur est appelé <mark class="def" title="opération  permettant de passer des valeurs échantillonnées des photo-sites aux trois valeurs (rouge, vert, bleu) qui permet de décrire les couleurs des pixels">dématriçage</mark>.
                 Cette étape se fait à l’aide d’un algorithme qui essaie de reconstituer les couleurs de la photographie à l’aide des valeurs obtenues par les capteurs. 
                 Une première approche serait de rassembler les photo-sites par carrés de 4 photo-sites. La couleur rouge et la couleur bleue serait alors directement lues sur les photo-sites concernés, alors que la couleur verte serait la moyenne des données des deux photo-sites avec un filtre vert. Avec cette approche, on obtiendrait 4 fois moins de pixels que de photo-sites de départ.
             </p>
@@ -237,34 +237,87 @@ Ces trois couleurs permettrons ensuite de reconstituer tout les couleurs du spec
             </p>
             <h2>Nombre de pixels, définition et résolution</h2>
             <p>
-                Pour évaluer la qualité d’une photo, on détermine sa <mark>définition</mark>, c’est-à-dire le nombre de pixels qui la compose.
+                Pour évaluer la qualité d’une photo, on détermine sa <mark class="def" title="nombre de pixels d'une image numérique">définition</mark>, c’est-à-dire le nombre de pixels qui la compose.
                 Une image de 4896 lignes de 3672 pixels a pour définition de 4896 × 3672 = 17 978 112 pixels soit environ 18 Mégapixels.
                 La définition d’une photo permet de prévoir la taille (en Mo) du fichier.
                 En effet, en couleurs vraies, chaque pixel est codé sur 3 octets.
                 Sans compression, l’image précédente nécessiterait environ 54 Mo d’espace sur le disque.
             </p>
             <p>
-Il ne faut pas confondre cette définition avec la <mark>résolution</mark> qui permet d’estimer la qualité d’une impression ou d’un écran.
+Il ne faut pas confondre cette définition avec la <mark class="def" title="nombre de pixel par unité de longueur (1 pouce) d'une image numérique">résolution</mark> qui permet d’estimer la qualité d’une impression ou d’un écran.
 La résolution d’une image est égale au nombre de pixels par unité de longueur.
 Elle est exprimée en dots per inch (DPI) ou PPP pour point par pouce en français.
             </p>
             <div class="exercice">
                 On considère une image de définition 800 × 533 que l’on imprime sur du papier photo de taille 15 × 10 (en cm). Calculer la résolution de cette image en ppp (rappel 1 pouce = 2,54 cm).
+                <p class="centrer">
+                    <input type="button" value="aide">
+                </p>
+                <div class="exercicesDefinitionResolution">
+                    Compléter le tableau suivant :
+                    <table>
+                        <tr><th></th><th>image</th><th>1"</th></tr>
+                        <tr><th rowspan="2">en cm</th><td class="no-border">ℓ =</td><th rowspan="2">2,54</th></tr>
+                        <tr><td class="no-border">h =</td></tr>
+                        <tr><th rowspan="2">en pixels</th><td class="no-border">ℓ =</td><td rowspan="2">r =</td></tr>
+                        <tr><td class="no-border">h =</td></tr>
+                    </table>
+                    Un seul produit en croix suffit (avec ℓ ou avec h), le second produit en croix permet de vérifier ses calculs.
+                </div>
             </div>
             <div class="exercice">
                 Sachant que l’on estime que pour avoir une impression de qualité il faut atteindre une résolution de 300 ppp, calculer la définition minimale d’une image dans le cas d’une
 impression sur du papier photo 15 × 10 (en cm).
+                <p class="centrer">
+                    <input type="button" value="aide">
+                </p>
+                <div class="exercicesDefinitionResolution">
+                    Compléter le tableau suivant :
+                    <table>
+                        <tr><th></th><th>image</th><th>1"</th></tr>
+                        <tr><th rowspan="2">en cm</th><td class="no-border">ℓ =</td><th rowspan="2">2,54</th></tr>
+                        <tr><td class="no-border">h =</td></tr>
+                        <tr><th rowspan="2">en pixels</th><td class="no-border">ℓ =</td><td rowspan="2">r =</td></tr>
+                        <tr><td class="no-border">h =</td></tr>
+                    </table>
+                    Un seul produit en croix suffit (avec ℓ ou avec h), le second produit en croix permet de vérifier ses calculs.
+                </div>
             </div>
             <div class="exercice">
                 L’écran d’un smartphone a une résolution de 458 ppp, il affiche des images de définition 2436 × 1125.
                 <ol>
-                    <li>Calculer la taille de cet écran (largeur, hauteur) en cm.</li>
-                    <li>Quelle est la longueur de sa diagonale en pouces ?</li>
+                    <li>
+                        Calculer la taille de cet écran (largeur, hauteur) en cm.
+                        <p class="centrer">
+                            <input type="button" value="aide">
+                        </p>
+                        <div class="exercicesDefinitionResolution">
+                            Compléter le tableau suivant :
+                            <table>
+                                <tr><th></th><th>image</th><th>1"</th></tr>
+                                <tr><th rowspan="2">en cm</th><td class="no-border">ℓ =</td><th rowspan="2">2,54</th></tr>
+                                <tr><td class="no-border">h =</td></tr>
+                                <tr><th rowspan="2">en pixels</th><td class="no-border">ℓ =</td><td rowspan="2">r =</td></tr>
+                                <tr><td class="no-border">h =</td></tr>
+                            </table>
+                            Un seul produit en croix suffit (avec ℓ ou avec h), le second produit en croix permet de vérifier ses calculs.
+                        </div>
+                    </li>
+                    <li>
+                        Quelle est la longueur de sa diagonale en pouces ?
+                        <p class="centrer">
+                            <input type="button" value="aide">
+                        </p>
+                        <div class="exercicesDefinitionResolution">
+                            Réaliser un schéma, utiliser les mathématiques de collège pour calculer la longueur de la diagonale en cm puis la convertir en pouces.
+                        </div>
+                    </li>
                 </ol>
             </div>
         </div>
         <script type="text/javascript" src="../script.js"></script>
         <script type="text/javascript" src="Bayer.js"></script>
         <script type="text/javascript" src="composantes.js"></script>
+        <script type="text/javascript" src="exercicesDefinitionResolution.js"></script>
     </body>
 </html>

@@ -82,3 +82,15 @@ p.juste {
     margin: 0 auto;
     background-color: red;
 }
+
+.exercicesDefinitionResolution {
+    color: blue;
+}
+
+.exercicesDefinitionResolution td {
+    text-align: left;
+}
+
+.no-border {
+    border: none;
+}
