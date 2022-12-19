@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="fr">
+    <head>
+        <meta charset="utf-8"/>
+        <link rel="stylesheet" href="../style.css"/>
+        <link rel="stylesheet" href="web.css"/>
+    </head>
+    <body>
+        <div class="main">
+            <h1>Le Web : introduction</h1>
+            <p>
+                <b>Définition :</b> Service proposé sur le réseau Internet permettant de naviguer sur des pages en cliquant sur des liens.
+                On parle aussi de World Wide Web (toile d’araignée mondiale).
+            </p>
+            <h2>Repères historique</h2>
+            <p>Le Web a été développé au CERN (Conseil Européen pour la Recherche Nucléaire) par le Britannique Sir Timothy John Berners-Lee et le Belge Robert Cailliau au début des années 90. À cette époque les principaux centres de recherche mondiaux étaient déjà connectés les uns aux autres, mais pour faciliter les échanges d’information Tim Berners-Lee met au point le système <mark>hypertexte</mark>. Ce système permet, à partir d’un document, de consulter d’autres documents en cliquant sur des mots clés. Ces mots "cliquables" sont appelés <mark>hyperliens</mark>. Le tout premier document hypertexte (page web), est toujours accessible à l’adresse :
+            </p>
+            <p class="centrer">
+                <a href="http://info.cern.ch/hypertext/WWW/TheProject.html">http://info.cern.ch/hypertext/WWW/TheProject.html</a>
+            </p>
+            <h2>Navigateurs web</h2>
+            <p>
+                Pour visualiser les pages web et utiliser les hypertextes, Timothy John Berners-Lee développe le premier navigateur web qu’il appelle simplement WorldWideWeb.
+            </p>
+            <p><b>Définition :</b> Un navigateur est un logiciel permettant de visualiser une page web et d’utiliser les hypertextes.</p>
+            <div class="exercice">
+                Retrouver le nom des navigateurs pour ordinateurs les plus répandus aujourd’hui :
+                <table>
+                    <tr>
+                        <td><img src="chrome.png"></td>
+                        <td><img src="edge.png"></td>
+                        <td><img src="firefox.png"></td>
+                        <td><img src="opera.png"></td>
+                        <td><img src="safari.png"></td>
+                    <tr>
+                    <tr id="trExerciceNavigateurs">
+                        <td><input type="texte"></td>
+                        <td><input type="texte"></td>
+                        <td><input type="texte"></td>
+                        <td><input type="texte"></td>
+                        <td><input type="texte"></td>
+                    </tr>
+                </table>
+                <p class="centrer"><input type="button" value="vérifier" id="btnExerciceNavigateurs"></p>
+                <p class="centrer" id="pExerciceNavigateurs">
+            </div>
+            <h2>Fonctionnement</h2>
+            <p>
+                D'un point de vue technique, le web est fondé sur 3 éléments :
+                <ul>
+                    <li><b>URL :</b> Uniform Resource Locator est un texte permettant de localiser une ressource sur un serveur et plus généralement sur internet</li>
+                    <li><b>HTTP(s) :</b> HyperText Transfer Protocol (Secure) est un protocole de communications client-server.</li>
+                    <li><b>HTML :</b> Hypertext Markup Language est un langage de programmation permettant d’écrire des documents hypertextes (pages internet)</li>
+                </ul>
+            </p>
+            <p>
+                L'URL a déja été abordée à l'occasion du thème internet <a href="../1_Internet/DNS.html">ici</a>.
+                Le protocole HTTP et le langage HTML seront abordés lors des prochaines parties.
+            </p>
+        </div>
+        <script type="text/javascript" src="../script.js"></script>
+        <script type="text/javascript" src="exerciceNavigateurs.js"></script>
+    </body>
+</html>
