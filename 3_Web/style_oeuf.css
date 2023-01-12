@@ -17,6 +17,6 @@ a {
 }
 
 .poeme {
-    width: 250px;
+    width: max-content;
     margin: auto;
 }
