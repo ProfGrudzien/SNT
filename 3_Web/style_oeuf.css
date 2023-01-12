@@ -20,3 +20,9 @@ a {
     width: max-content;
     margin: auto;
 }
+
+img {
+    display: block;
+    margin: auto;
+    max-width: 220px;
+}
