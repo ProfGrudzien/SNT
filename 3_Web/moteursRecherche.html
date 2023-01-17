@@ -3,11 +3,95 @@
     <head>
         <meta charset="utf-8"/>
         <link rel="stylesheet" href="../style.css"/>
+        <link rel="stylesheet" href="Animations.css"/>
     </head>
     <body>
         <div class="main">
             <h1>Les moteurs de recherche</h1>
+            <h2>Historique</h2>
+            <div class="centrer">
+                <iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/0A5fQER40Wg" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+            </div>
+            <h2>Fonctionnement</h2>
+            <p>
+                Le fonctionnement d'un moteur de recherche se décompose en trois processus principaux :
+                <ol>
+                    <li>
+                        <b>L'exploration</b> : (crawl en anglais)
+                        le web est exploré par un robot d'indexation (un <mark>bot</mark>) suivant les hyperliens qu'il trouve et récupérant les ressources jugées intéressantes.
+                    </li>
+                    <li>
+                        <b>L'indexation</b> : les mots considérés comme significatifs sont enregistrés dans une base de données.
+                    </li>
+                    <li>
+                        <b>La recherche</b> : un algorithme est appliqué sur la base de donnée obtenue par l'indexation pour filtrer les pages webs et les trier par ordre de pertinence supposée. Avant de traiter la recherche, la requête passe par un correcteur orthographique, un lemmatiseur (remplace les verbes conjuguées par leur infinitif, les nom au pluriel par leur singulier, ...) et un anti-dictionnaire qui supprime les mots non pertinents (le, la, de, ...).
+                    </li>
+                </ol>
+            </p>
+            <h2>PageRank</h2>
+            <p>
+                Le PageRank est l'algorithme d'analyse des liens concourant au système de classement des pages Web utilisé par le moteur de recherche Google. Il mesure quantitativement la popularité d'une page web. Le PageRank n'est qu'un indicateur parmi d'autres dans l'algorithme qui permet de classer les pages du Web dans les résultats de recherche de Google. Ce système a été inventé par Larry Page, cofondateur de Google. Ce mot est une marque déposée. 
+            </p>
+            <h3>Approche théorique</h3>
+            <p>
+                Le PageRank modélise la probabilité qu'un visiteur ouvre une page web s'il navigue de façon aléatoire.
+                Le PageRank d'une page dépend des PageRank de toutes les pages qui pointent vers elle.
+                La formule habituelle du PageRank d'une page choisie est la suivante :
+            </p>
+            <p class="centrer">
+                <span class="frac"><span class="haut">0,15</span><span class="bas">n</span></span>
+                + 0,85 &times; Somme <span class="big">(</span> <span class="frac"><span class="haut">PageRank(p)</span><span class="bas">nombre de liens de la page p</span></span><span class="big">)</span>
+            </p>
+            <p>
+                où :
+                <ul>
+                    <li>n est le nombre total de sites</li>
+                    <li>la Somme porte sur l'ensemble des pages qui pointent vers la page choisie.</li>
+                </ul>
+            </p>
+            <div class="encadre">
+                <p>Exemple :</p>
+                <p>On considère uniquement les pages ci-dessous.</p>
+                <img src='GraphePageRank.png'>
+                <p>Comme il y a 10 pages, n = 10</p>
+                <p>Les pages B, C, D, E et F ont un lien qui mène vers A.</p>
+                <p>Le PageRank du site A se calcul grâce à la formule :</p>
+                <p class="centrer">
+                    <span class="frac"><span class="haut">0,15</span><span class="bas">10</span></span>
+                    + 0,85 &times; <span class="big">(</span>
+                        <span class="frac"><span class="haut">PageRank(B)</span><span class="bas">2</span></span>
+                        + <span class="frac"><span class="haut">PageRank(C)</span><span class="bas">1</span></span>
+                        + <span class="frac"><span class="haut">PageRank(D)</span><span class="bas">2</span></span>
+                        + <span class="frac"><span class="haut">PageRank(E)</span><span class="bas">3</span></span>
+                        + <span class="frac"><span class="haut">PageRank(F)</span><span class="bas">2</span></span>
+                    <span class="big">)</span>
+                </p>
+            </div>
+            <div class="exercice">
+                Ecrire la formule permettant de calculer le PageRank du site B de l'exemple précédent.
+            </div>
+            <h3>Estimation du PageRank</h3>
+            <p>
+                Comme les PageRank dépendent les uns des autres, il n'est pas possible de les déterminer par un simple calcul.
+                Il faudrait écrire un système de n équations à n inconnues ce qui est très coûteux (en puissance de calcul) à résoudre.
+            </p>
+            <p>On utilise alors une autre méthode pour calculer ce PageRank :
+                <ul>
+                    <li>On commence par attribuer un PageRank égal à <span class="frac"><span class="haut">1</span><span class="bas">n</span></span> à toutes les pages.</li>
+                    <li>A chaque fois que le bot parcours une page lors de l'exploration, il met à jour le PageRank avec la formule vue plus haut et les PageRank des pages à ce moment là (qui sont déjà des estimations.)</li>
+                </ul>
+                L'animation suivante présente l'évolution des PageRank au fur et à mesure d'explorations succéssives.
+            </p>
+            <div class="animation" id="PageRank">
+                <input type="button" value="▶" class="lancer" id="lancerPageRank"/>
+            </div>
+            <p>Après plusieurs itérations, l'estimation des PageRank est proche des valeurs théoriques suivantes :</p>
+            <table>
+                <tr><th>Site</th><td>A</td><td>B</td><td>C</td><td>D</td><td>E</td><td>F</td><td>G</td><td>H</td><td>I</td><td>J</td></tr>
+                <tr><th>PageRank</th><td>0,06017</td><td>0,0363</td><td>0,015</td><td>0,015</td><td>0,015</td><td>0,015</td><td>0,03205</td><td>0,02862</td><td>0,32739</td><td>0,29327</td></tr>
+            </table>
         </div>
         <script type="text/javascript" src="../script.js"></script>
+        <script type="text/javascript" src="animation.js"></script>
     </body>
 </html>
