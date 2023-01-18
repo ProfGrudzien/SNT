@@ -82,6 +82,11 @@ table.etroite {
     margin: auto;
 }
 
+caption {
+    caption-side: bottom;
+    font-style: italic;
+}
+
 th, td {
     border: 1px solid black;
     padding: 5px;
@@ -187,4 +192,8 @@ span.bas{
     display: block;
     border-top: 1px solid;
     text-align: center;
+}
+
+span.big {
+    font-size: 24pt;
 }

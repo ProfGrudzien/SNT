@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="fr">
+    <head>
+        <meta charset="utf-8"/>
+        <link rel="stylesheet" href="../style.css"/>
+    </head>
+    <body>
+        <div class="main">
+            <h1>Les données</h1>
+            <h2>Qu’est ce qu’une donnée ?</h2>
+            <p>
+                <b>Définition :</b> Une donnée est une valeur (texte, nombre, date, ...) attribuée à une entité pour la décrire.
+            </p>
+            <p>Les données peuvent prendre différentes formes. Elles sont ensuite traduites en binaire (uniquement en 0 et 1) pour être stockées sur des supports numériques dans un fichier. Le format du fichier, principalement visible grâce à son extension, permet de reconstruire les données à patir du binaire.</p>
+            <table>
+                <tr><th>Type de données</th><th>Exemple d'extension de fichier</th></tr>
+                <tr><td>Image</td><td>png, tiff, jpeg, gif</td></tr>
+                <tr><td>Son</td><td>mp3, ogg, flac</td></tr>
+                <tr><td>Vidéo</td><td>mpeg, avi, mkv, mp4</td></tr>
+                <tr><td>Document texte</td><td>doc(x), odt, pdf</td></tr>
+                <tr><td>Texte brut</td><td>txt, csv</td></tr>
+                <tr><td>Archives</td><td>zip, rar</td></tr>
+                <tr><td>Logiciel</td><td>exe, apk</td></tr>
+            </table>
+            <h3>Pourquoi tant de format ?</h3>
+            <p>Les formats répondent à différentes problématiques :</p>
+            <ul>
+                <li>Mémoire : lorsque les données sont comprésée pour utiliser moins de place sur le disque, cette compression peut se faire avec pertes (mp3, jpeg par exemples) pour être plus efficace ou sans pertes (flac, png par exemples). L'algorithme de compression choisit a aussi un impact sur le temps de calcul necessaire à cette compression.</li>
+                <li>Modifications. Certaines données doivent être facilement modifiables (documents textes doc(x) ou odt) ou à l’inverse sécurisées (pdf avec options de sécurités).</li>
+                <li>Licences. Certains formats sont basés sur des avancés développée par des entreprises qui veulent garder le contrôle sur ces formats. Les formats sont alors « propriétaires » ou « fermés » (mp3, doc(x) par exemple). Par oppositions, les autres formats sont dits « ouverts » ou « libre » (ogg ou odt par exemple).</li>
+            </ul>
+            <h2>Le binaire</h2>
+            <p>
+                Les supports numériques sont des supports contenant des millions de petits emplacements. Chaque petit emplacement peut adopter deux positions différentes. Par exemple, un cd contient des petites cavités qui réfléchissent la lumière. Au moment de graver le cd, certaines cavités sont brûlées et changent ainsi de position : elles ne réfléchissent plus la lumière. Au moment de la lecture du cd, la tête de lecture éclaire les cavités une par une et mesure la lumière réfléchie, déterminant ainsi si la cavité a été brûlée ou non.
+            </p>
+            <p>
+                Une des positions est associée à la valeur 1, l’autre à la valeur 0. On peut alors écrire des nombres en utilisant uniquement ces deux chiffres, c’est le « binaire ». Un seul chiffre (0 ou 1) est appelé un « bit ». Le regroupement de 8 bits est appelé un « octet». Un disque dur par exemple, contient des milliards de bits. Ces bits peuvent représenter des données de différentes natures, et hors contexte, il est très difficile de déterminer quelle est la nature de ces données.
+            </p>
+            <p>
+                Pour stocker du texte brut (un programme Python par exemple), un des encodages en binaire utilisé est l’ASCII. Cet encodage permet de coder tous les caractères utilisés en langue anglaise. Chaque caractères est traduit par une série de 7 bits. Le principe est simple, il suffit d’utiliser un tableau qui établi la correspondance entre les 128 caractères disponibles et les valeurs de ces 7 bits.
+            </p>
+            <table>
+                <tr><th>caractère</th><td>A</td><td>B</td><td>C</td><td>D</td><td>E</td><td>F</td><td>G</td><td>H</td><td>I</td><td>J</td><td>K</td></tr>
+                <tr><th>binaire</th><td>1000001</td><td>1000010</td><td>1000011</td><td>1000100</td><td>1000101</td><td>1000110</td><td>1000111</td><td>1001000</td><td>1001001</td><td>1001010</td><td>1001011</td></tr>
+            </table>
+            <table>
+                <tr><th>caractère</th><td>L</td><td>M</td><td>N</td><td>O</td><td>P</td><td>Q</td><td>R</td><td>S</td><td>T</td><td>U</td><td>V</td></tr>
+                <tr><th>binaire</th><td>1001100</td><td>1001101</td><td>1001110</td><td>1001111</td><td>1010000</td><td>1010001</td><td>1010010</td><td>1010011</td><td>1010100</td><td>1010101</td><td>1010110</td></tr>
+            </table>
+            <table>
+                <caption>extrait du tableau des caractères ASCII</caption>
+                <tr><th>caractère</th><td>W</td><td>X</td><td>Y</td><td>Z</td><td>-</td><td>.</td><td>,</td><td>;</td><td>:</td><td>!</td><td><i>espace</i></td></tr>
+                <tr><th>binaire</th><td>1010111</td><td>1011000</td><td>1011001</td><td>1011010</td><td>0101101</td><td>0101110</td><td>0101100</td><td>0111011</td><td>0111010</td><td>0100001</td><td>0100000</td></tr>
+            </table>
+            <div class="exercice">
+                <ol>
+                    <li>Coder votre prénom en binaire grâce au codage ASCII.</li>
+                    <li>Décoder le texte suivant écrit en binaire grâce au codage ASCII
+                    <p class="centrer">1000010 1001001 1000111 1000100 1000001 1010100 1000001</p></li>
+                    <li>En anglais, la déclaration des droits de l'homme utilise 10 752 caractères. Combien d'octets sont nécessaire pour enregistrer ce texte encodé en ASCII ?</li>
+                </ol>
+            </div>
+            <h2>Collecte de données</h2>
+            <p>La collecte de données se fait en partie par de la saisie de données par un être humain. Exemples :</p>
+            <ul>
+                <li>formulaire d'inscription à l'université</li>
+                <li>dossiers administratifs</li>
+            </ul>
+            <p>Mais la collecte peut aussi être automatisée. Exemples :</p>
+            <ul>
+                <li>vidéo-surveillance</li>
+                <li>télé-péages</li>
+                <li>pisteurs sur internet pour collecter les sites visités</li>
+            </ul>
+            <p>
+                Ces données ont un prix. Même si la gestion de ces données est très encadrées, la revente de bases de données génèrent des millions de dollars chaque année. Des hackers se sont même spécialisés et revendent sur le marché illégal des bases de données obtenu par piratage.
+            </p>
+            <h2>Big Data</h2>
+            <p>Aujourd'hui, le volume des données collectées double tous les 3 ans. 
+La raison : les réseaux sociaux collectent beaucoup d'informations sur leurs milliards d'abonnés. Les grands centres de recherche disposent aussi d'instrument collectant des données en très grand nombre. Le grand collisionneur de hadrons du CERN collecte 1 Mo pour chaque collision entre deux particules, il s'en produit environ 600 par secondes.</p>
+            <p>Les big data sont définis par les 3V :</p>
+            <ul>
+                <li><b>Volume :</b> un volume de données de plus en plus conséquent</li>
+                <li><b>Variété :</b> des données de natures différentes</li>
+                <li><b>Vélocité :</b> des données qui évoluent très vite</li>
+            </ul>
+            <p>Une nouvelle branche de l'étude des données est apparut car les méthodes conventionnelles ne peuvent pas s'adapter aux big data.</p>
+        </div>
+        <script type="text/javascript" src="../script.js"></script>
+    </body>
+</html>
