@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="fr">
+    <head>
+        <meta charset="utf-8"/>
+        <link rel="stylesheet" href="../style.css"/>
+    </head>
+    <body>
+        <div class="main">
+            <h1>Traiter des données structurées</h1>
+            <h2>Bases de données</h2>
+            <p>
+                Une base de données est la collection de données décrivant des entités de même nature.
+                Les données sont souvent représentées en tableau. Chaque ligne correspond à une des entités, on parle d’<mark>enregistrement</mark>.
+                Le nom d’une colonne est un <mark>descripteur</mark>.
+                Pour visualiser et manipuler ces données, on peut adopter différentes approches :
+                <ul>
+                    <li>utiliser un format simple (texte brut) et un langage de programmation ;</li>
+                    <li>utiliser un tableur ;</li>
+                    <li>utiliser un logiciel de base de données relationnelles.</li>
+                </ul>
+            </p>
+            <h2>Base de données en texte brut</h2>
+            <p>
+                Un moyen simple d’enregistrer les données est d’utiliser un format texte brut.
+                Enregistrer les données en texte plutôt que directement en binaire permet de faciliter leur consultation, les échanges et le traitement par des logiciels.
+                Les principaux formats de bases de données en texte brut sont :
+            </p>
+            <h3>Les fichiers CSV</h3>
+            <p>
+                Dans le format de fichier CSV (comma-separated values), chaque enregistrement est décrit par une ligne où les valeurs sont séparés par un symbole bien défini.
+                Souvent ce symbole est la virgule (comma en anglais), mais parfois le point-virgule ou la tabulation.
+                La première ligne contient généralement le nom des descripteurs.
+            </p>
+            <div class="encadre">
+                nom;prénom;poste<br/>
+                Lloris;Hugo;gardien<br/>
+                Hernandez;Lucas;défenseur<br/>
+                Kimpembe;Presnel;défenseur
+            </div>
+            <p>
+                Le principal objectif est d’économiser l’espace nécessaire pour enregistrer les données.
+                La conséquence est le manque de lisibilité d’un enregistrement si le nombre de descripteurs est important.
+            </p>
+            <h3>Les fichiers XML</h3>
+            <p>
+                Le format XML permet de détailler les valeurs prises par un enregistrement en les découpant selon plusieurs descripteur.
+                Il permet alors de décrire une hiérarchie dans des entités de nature différente.
+                La syntaxe s’apparente à celle du langage HTML.
+            </p>
+            <div class="encadre">
+                &lt;equipe&gt;<br/>
+                &nbsp;&nbsp;&nbsp;&nbsp;&lt;pays&gt;France&lt;/pays&gt;<br/>
+                &nbsp;&nbsp;&nbsp;&nbsp;&lt;joueur&gt;<br/>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;nom&gt;Lloris&lt;/nom&gt;<br/>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;prenom&gt;Hugo&lt;/prenom&gt;<br/>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;poste&gt;gardien&lt;/poste&gt;<br/>
+                &nbsp;&nbsp;&nbsp;&nbsp;&lt;/joueur&gt;<br/>
+                &nbsp;&nbsp;&nbsp;&nbsp;&lt;joueur&gt;<br/>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;nom&gt;Hernandez&lt;/nom&gt;<br/>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;prenom&gt;Lucas&lt;/prenom&gt;<br/>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;poste&gt;défenseur&lt;/poste&gt;<br/>
+                &nbsp;&nbsp;&nbsp;&nbsp;&lt;/joueur&gt;<br/>
+                &lt;/equipe&gt;
+            </div>
+            <h3>Le format JSON</h3>
+            <p>
+                Le format JSON (JavaScript Object Notation) utilise la syntaxe du langage de programmation JavaScript très utilisé sur le Web.
+                Il permet alors une intégration très facile avec ce langage de programmation mais est aussi très facilement exploitable par les autres langages de programmation.
+            </p>
+            <div class="encadre">
+                [<br/>
+                &nbsp;&nbsp;&nbsp;&nbsp;{ "nom":"Lloris", "prénom":"Hugo", "poste":"gardien" },<br/>
+                &nbsp;&nbsp;&nbsp;&nbsp;{ "nom":"Hernandez", "prénom":"Lucas", "poste":"défenseur" },<br/>
+                &nbsp;&nbsp;&nbsp;&nbsp;{ "nom":"Kimpembe", "prénom":"Presnel", "poste":"défenseur" }<br/>
+                ]
+            </div>
+            <h2>Exploitation avec un tableur</h2>
+            <p>
+                Comme les données structurées peuvent être décrites par des tableaux, le tableur est un logiciel très indiqué pour consulter et traiter ces données.
+                Ce type de logiciel gère d’ailleurs très bien le format CSV et propose de choisir les paramètres afin de reconstituer le tableau représentant ces données.
+            </p>
+            <div class="exercice">
+                <ol>
+                    <li>Télécharger le fichier <a href="ival-2020-donn-es–87809.csv">ival-2020-donn-es–87809.csv</a></li>
+                    <li>
+                        Ouvrir ce fichier avec un <b>éditeur de texte</b>.
+                        <ol class="sous-num">
+                            <li>Combien d’enregistrements contient cette base de données ?</li>
+                            <li>A quoi correspondent les trois premières valeurs de chaque enregistrement ?</li>
+                            <li>Comment retrouver la ligne correspondant à notre lycée ?</li>
+                        </ol>
+                    </li>
+                    <li>
+                        Ouvrir ce fichier avec un <b>tableur</b>.
+                        <ol class="sous-num">
+                            <li>Dans quelle colonne peut-on trouver le pourcentage de réussite toutes filières confondues ?</li>
+                            <li>Sélectionner les données puis l’outil auto-filtres. Avec cet outil, retrouver notre lycée.</li>
+                            <li>Ré-afficher tous les établissements puis avec l'auto-filtre, ranger les lycées par ordre décroissant de nombre d’élèves présents à l’épreuve du bac (toutes filières confondues).</li>
+                            <li>Sélectionner les données, puis avec l'outil trier, ranger les établissements par taux de réussite (toutes filières confondues) puis par nombre de présents (toutes filières confondues)</li>
+                        </ol>
+                    </li>
+                </ol>
+            </div>
+            <div class="exercice">
+                <ol>
+                    <li>Télécharger le fichier <a href="etablissements.csv">etablissements.csv</a></li>
+                    <li>Ouvrir ce fichier avec un <b>tableur</b>.</li>
+                    <li>
+                        Cacher les colonnes qui ne nous serviront pas, c’est-à-dire toutes sauf :
+                        <ul>
+                            <li>Appellation officielle</li>
+                            <li>Secteur Public / Privé</li>
+                            <li>Commune</li>
+                            <li>Latitude</li>
+                            <li>Longitude</li>
+                            <li>Nature</li>
+                            <li>Département</li>
+                        </ul>
+                    </li>
+                    <li>Quel est l’établissement le plus à l’ouest ?</li>
+                    <li>Quel est le collège le plus au sud ?</li>
+                    <li>Combien y a t’il de lycées publics dans le Vaucluse ?</li>
+                    <li>Quelle est l’école publique la plus au nord de Cavaillon ?</li>
+                </ol>
+            </div>
+        </div>
+        <script type="text/javascript" src="../script.js"></script>
+    </body>
+</html>
