@@ -81,7 +81,7 @@
             </p>
             <div class="exercice">
                 <ol>
-                    <li>Télécharger le fichier <a href="ival-2020-donn-es--87809.csv">ival-2020-donn-es--87809.csv</a></li>
+                    <li>Télécharger le fichier <a href="ival-2020-donn-es–87809.csv">ival-2020-donn-es–87809.csv</a></li>
                     <li>
                         Ouvrir ce fichier avec un <b>éditeur de texte</b>.
                         <ol class="sous-num">
@@ -122,6 +122,126 @@
                     <li>Combien y a t’il de lycées publics dans le Vaucluse ?</li>
                     <li>Quelle est l’école publique la plus au nord de Cavaillon ?</li>
                 </ol>
+            </div>
+            <h2>Exploitation avec Python</h2>
+            <h3>Les listes</h3>
+            <p>
+                La liste est un nouveau type de variable qui permet de stocker plusieurs éléments.
+                En python, les éléments d’une même liste ne sont pas nécessairement du même type.
+                Une liste est reconnaissable par l’utilisation de crochet pour ouvrir et fermer la liste
+                et par l’utilisation de virgules pour séparer les données. Exemples :
+            </p>
+            <div class="algo">
+                <input type="button" class="copier" value="📑" title="copier">
+                <p class="code">
+                    L = [] <span class="commentaire"># une liste vide</span><br/>
+                    I = [17] <span class="commentaire"># une liste d’une seule valeur</span><br/>
+                    S = [3, 5, 7]<br/>
+                    T = [1, "pomme", 2.3]<br/>
+                    E = [[1, 2, 3], [4, 5, 6], [7, 8, 9]]<br/>
+                </p>
+            </div>
+            <p>
+                On peut afficher le nombre d’éléments d’une liste <mark class='code'>L</mark> grâce à la fonction <mark class='code'>len(L)</mark>.
+                On accède aux éléments d’une liste grâce à leur position que l’on appelle aussi <mark>indice</mark>.
+                Attention, en Python, cette numérotation commence à 0 !
+            </p>
+            <div class="exercice">
+                On considère la liste <mark class="code">L = [3, 4, 13, 14, 25, 26, 37, 38, 49, 50]</mark>.<br/>
+                Compléter les phrases suivantes :
+                <ol>
+                    <li>L[5] donne la ... valeur, c’est-à-dire la valeur ... .</li>
+                    <li>L[...] donne la 3<sup>ème</sup> valeur, c’est-à-dire la valeur 13.</li>
+                    <li>L[...] donne la 1<sup>ère</sup> valeur, c’est-à-dire la valeur 3.</li>
+                </ol>
+            </div>
+            <p>
+                On peut parcourir les éléments d’une liste à l’aide d’une boucle <mark class="code">for</mark>. Exemple :
+            </p>
+            <div class="algo">
+                <input type="button" class="copier" value="📑" title="copier">
+                <p class="code">
+                    L = ["Anna", "Lee-Lou", "Emma"]<br/>
+                    for prenom in L :<br/>
+                    &nbsp;&nbsp;&nbsp;&nbsp;print("Bonjour", prenom, "!")
+                </p>
+            </div>
+            <div class="exercice">
+                <ol>
+                    <li>Créer la liste <mark class="code">M</mark> contenant tous les mois de l’année. N’oubliez pas les guillemets !</li>
+                    <li>A l’aide d’une boucle, afficher tous ces mois.</li>
+                    <li>Compléter l’affichage pour ajouter le numéro du mois (1 pour janvier, 2 pour février, ...) devant le nom du mois.<br/>
+                        Indice : on pourra utiliser une autre variable n</li>
+                    <li>Afficher uniquement les mois dont le nom contient la lettre « v ».<br/>
+                        Indice : on pourra utiliser un test if</li>
+                </ol>
+            </div>
+            <h3>Fichier CSV et Python</h3>
+            <p>
+                Python propose une bibliothèque permettant de facilement utiliser les données enregistrées dans des fichiers CSV.
+                Il suffit d’écrire les lignes de code suivante pour extraire les données du fichier ival-2020-donn-es--87809.csv
+            </p>
+            <div class="algo">
+                <input type="button" class="copier" value="📑" title="copier">
+                <p class="code">
+                    import csv<br/>
+                    with open("ival-2020-donn-es--87809.csv") as fichier :<br/>
+                    &nbsp;&nbsp;&nbsp;&nbsp;lignes = list(csv.reader(fichier, delimiter=";"))
+                </p>
+            </div>
+            <p>
+                Remarque : le paramètre <mark class="code">delimiter=";"</mark> permet de choisir le caractère séparant les valeurs dans le fichier CSV.
+            </p>
+            <p>
+                La première ligne de ce fichier CSV contient le nom des descripteurs.
+                En python, on utilisera l’indice des valeurs pour y accéder.
+                On commence donc par afficher tous les noms des descripteurs accompagnés de leurs indices :
+            </p>
+            <div class="algo">
+                <input type="button" class="copier" value="📑" title="copier">
+                <p class="code">
+                    i = 0<br/>
+                    for nom in lignes[0] :<br/>
+                    &nbsp;&nbsp;&nbsp;&nbsp;print(i, ":", nom)<br/>
+                    &nbsp;&nbsp;&nbsp;&nbsp;i = i + 1
+                </p>
+            </div>
+            <p>
+                On peut maintenant filtrer les données pour n’afficher par exemple que le nom et la ville
+                des lycées avec 100% de réussite au bac :
+            </p>
+            <div class="algo">
+                <input type="button" class="copier" value="📑" title="copier">
+                <p class="code">
+                    for ligne in lignes :<br/>
+                    &nbsp;&nbsp;&nbsp;&nbsp;if ligne[28] == "100" :<br/>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;print(ligne[2], "à", ligne[3])
+                </p>
+            </div>
+            <p>
+                On peut aussi enregistrer le résultat du filtrage dans une nouvelle liste. Exemple :
+            </p>
+            <div class="algo">
+                <input type="button" class="copier" value="📑" title="copier">
+                <p class="code">
+                    R = [[L[2], L[3], L[28]] for L in lignes if L[1] == "VAUCLUSE"]
+                </p>
+            </div>
+            <p>
+                Les données d’une ligne peuvent alors être triées. Il faut alors utiliser une fonction pour
+                indiquer au programme la valeur qui permet de faire le tri. Ici, les lycées du Vaucluse de
+                la liste <mark class="code">R</mark> vont être triés par réussite au bac puis affichés.
+            </p>
+            <div class="algo">
+                <input type="button" class="copier" value="📑" title="copier">
+                <p class="code">
+                    def ordre(lycee) :<br/>
+                    &nbsp;&nbsp;&nbsp;&nbsp;return -int(lycee[2])<br/>
+                    <span class="commentaire"># int convertit en nombre entier, le - permet le tri décroissant</span><br/>
+                    R.sort(key=ordre)<br/>
+                    for lycee in R :<br/>
+                    &nbsp;&nbsp;&nbsp;&nbsp;print(lycee[0], "à", lycee[1], ":", lycee[2])
+                </p>
             </div>
         </div>
         <script type="text/javascript" src="../script.js"></script>
