@@ -10,7 +10,8 @@
             <h2>Bases de données</h2>
             <p>
                 Une base de données est la collection de données décrivant des entités de même nature.
-                Les données sont souvent représentées en tableau. Chaque ligne correspond à une des entités, on parle d’<mark>enregistrement</mark>.
+                Les données sont souvent représentées en tableau.
+                Chaque ligne correspond à une des entités, on parle d’<mark>enregistrement</mark>.
                 Le nom d’une colonne est un <mark>descripteur</mark>.
                 Pour visualiser et manipuler ces données, on peut adopter différentes approches :
                 <ul>
@@ -22,12 +23,14 @@
             <h2>Base de données en texte brut</h2>
             <p>
                 Un moyen simple d’enregistrer les données est d’utiliser un format texte brut.
-                Enregistrer les données en texte plutôt que directement en binaire permet de faciliter leur consultation, les échanges et le traitement par des logiciels.
+                Enregistrer les données en texte plutôt que directement en binaire permet de faciliter leur consultation,
+                les échanges et le traitement par des logiciels.
                 Les principaux formats de bases de données en texte brut sont :
             </p>
             <h3>Les fichiers CSV</h3>
             <p>
-                Dans le format de fichier CSV (comma-separated values), chaque enregistrement est décrit par une ligne où les valeurs sont séparés par un symbole bien défini.
+                Dans le format de fichier CSV (comma-separated values), chaque enregistrement est décrit par une ligne
+                où les valeurs sont séparés par un symbole bien défini.
                 Souvent ce symbole est la virgule (comma en anglais), mais parfois le point-virgule ou la tabulation.
                 La première ligne contient généralement le nom des descripteurs.
             </p>
@@ -43,8 +46,8 @@
             </p>
             <h3>Les fichiers XML</h3>
             <p>
-                Le format XML permet de détailler les valeurs prises par un enregistrement en les découpant selon plusieurs descripteur.
-                Il permet alors de décrire une hiérarchie dans des entités de nature différente.
+                Le format XML permet de détailler les valeurs prises par un enregistrement en les découpant selon plusieurs descripteurs.
+                Il permet alors de décrire une hiérarchie dans des entités de natures différentes.
                 La syntaxe s’apparente à celle du langage HTML.
             </p>
             <div class="encadre">
@@ -64,8 +67,10 @@
             </div>
             <h3>Le format JSON</h3>
             <p>
-                Le format JSON (JavaScript Object Notation) utilise la syntaxe du langage de programmation JavaScript très utilisé sur le Web.
-                Il permet alors une intégration très facile avec ce langage de programmation mais est aussi très facilement exploitable par les autres langages de programmation.
+                Le format JSON (JavaScript Object Notation) utilise la syntaxe du langage de programmation JavaScript
+                très utilisé sur le Web.
+                Il permet alors une intégration très facile avec ce langage de programmation mais est aussi très facilement exploitable
+                par les autres langages de programmation.
             </p>
             <div class="encadre">
                 [<br/>
@@ -76,8 +81,10 @@
             </div>
             <h2>Exploitation avec un tableur</h2>
             <p>
-                Comme les données structurées peuvent être décrites par des tableaux, le tableur est un logiciel très indiqué pour consulter et traiter ces données.
-                Ce type de logiciel gère d’ailleurs très bien le format CSV et propose de choisir les paramètres afin de reconstituer le tableau représentant ces données.
+                Comme les données structurées peuvent être décrites par des tableaux,
+                le tableur est un logiciel très indiqué pour consulter et traiter ces données.
+                Ce type de logiciel gère d’ailleurs très bien le format CSV et propose de choisir les paramètres
+                afin de reconstituer le tableau représentant ces données.
             </p>
             <div class="exercice">
                 <ol>
@@ -95,8 +102,16 @@
                         <ol class="sous-num">
                             <li>Dans quelle colonne peut-on trouver le pourcentage de réussite toutes filières confondues ?</li>
                             <li>Sélectionner les données puis l’outil auto-filtres. Avec cet outil, retrouver notre lycée.</li>
-                            <li>Ré-afficher tous les établissements puis avec l'auto-filtre, ranger les lycées par ordre décroissant de nombre d’élèves présents à l’épreuve du bac (toutes filières confondues).</li>
-                            <li>Sélectionner les données, puis avec l'outil trier, ranger les établissements par taux de réussite (toutes filières confondues) puis par nombre de présents (toutes filières confondues)</li>
+                            <li>
+                                Ré-afficher tous les établissements puis avec l'auto-filtre,
+                                ranger les lycées par ordre décroissant de nombre d’élèves présents à l’épreuve du bac
+                                (toutes filières confondues).
+                            </li>
+                            <li>
+                                Sélectionner les données, puis avec l'outil trier,
+                                ranger les établissements par taux de réussite (toutes filières confondues)
+                                puis par nombre de présents (toutes filières confondues)
+                            </li>
                         </ol>
                     </li>
                 </ol>
@@ -242,6 +257,76 @@
                     for lycee in R :<br/>
                     &nbsp;&nbsp;&nbsp;&nbsp;print(lycee[0], "à", lycee[1], ":", lycee[2])
                 </p>
+            </div>
+            <h2>Le langage SQL</h2>
+            <p>
+                Le fichier CSV permet de facilement enregistrer des bases de données.
+                Cependant, ce n’est pas un format optimisé et il montre des limites pour enregistrer des bases de données volumineuses.
+                En effet, stocker des valeurs (les nombres notamment) directement en binaire économise beaucoup plus de place
+                que de les traduire en texte avant de stocker ce texte en binaire.
+            </p>
+            <p>
+                Le langage de programmation Python est polyvalent.
+                Il permet donc de gérer les bases de données.
+                Mais il faut bien connaître ce langage pour traiter les données comme on le souhaite.
+                Il existe des langages de programmation spécialisés pour manipuler des bases de données.
+            </p>
+            <p>
+                Le langage SQL par exemple permet de traiter facilement les données grâce à une syntaxe très facile à utiliser.
+                De plus, ce langage permet de manipuler des bases de données relationnelles,
+                c’est-à-dire proposant des liens entre des données stockées dans des tables différentes.
+            </p>
+            <p>
+                L’installation d’un serveur pour manipuler des bases de données relationnelles n’est pas simple.
+                Pour découvrir ce langage, nous utiliserons un simple simulateur disponible à l’adresse :
+                <a href="https://profgrudzien.github.io/practice_sql_in_browser/">https://profgrudzien.github.io/practice_sql_in_browser/</a>
+            </p>
+            <div class="exercice">
+                <ol>
+                    <li>
+                        La commande <mark class="code">SHOW DATABASES;</mark> permet de listes les bases de données disponibles.
+                        Quel est le nom de la base de données disponible&nbsp;?
+                    </li>
+                    <li>
+                        La commande <mark class="code">USE emmy18;</mark> permet de sélectionner cette base de données.
+                        La commande <mark class="code">SHOW TABLES;</mark> permet de listes les tables de la base de données sélectionnée.
+                        Quels sont les noms des tables de cette base de données&nbsp;?
+                    </li>
+                    <li>
+                        La commande <mark class="code">DESCRIBE series;</mark> affiche les descripteurs de la table <mark class="code">series</mark>.
+                        Quels sont ces descripteurs&nbsp;?
+                    </li>
+                    <li>Quels sont les descripteurs de la table <mark class="code">acteurs</mark>&nbsp;?</li>
+                    <li>Quels sont les descripteurs de la table <mark class="code">tourne</mark>&nbsp;?</li>
+                    <li>
+                        On peut sélectionner les données grâce à l’instruction <mark class="code">SELECT</mark>.
+                        Exemple : <mark class="code">SELECT prenom, nom FROM acteurs WHERE pays="Espagne";</mark>
+                        donne le prénom et le nom des acteurs espagnoles.
+                        Combien de résultat s’affichent&nbsp;?
+                    </li>
+                    <li>
+                        Pour sélectionner toutes les colonnes, on peut utiliser le caractère <mark class="code">*</mark>.
+                        Exemple : <mark class="code">SELECT * FROM acteurs;</mark> sélectionne toutes les colonnes pour tous les acteurs.
+                        Combien d’acteurs et actrices sont présents dans cette base de données&nbsp;?
+                    </li>
+                    <li>Quelle instruction permet d’afficher le nom des actrices de cette base de données&nbsp;?</li>
+                    <li>Quelle instruction permet d’afficher le nom des séries diffusées par Netflix&nbsp;?</li>
+                    <li>
+                        On peut aussi croiser les tables facilement.
+                        Si un descripteur est présent dans plusieurs tables, 
+                        on peut préciser le nom de la table en utilisant le symbole <mark class="code">.</mark>.
+                        Exemple : <br/><mark class="code">SELECT role FROM acteurs, tourne WHERE id_acteur=acteurs.id and nom="Foy";</mark>
+                        affiche les rôles interprétés par l’actrice Claire Foy. Quelle rôle interprète-t-elle&nbsp;?
+                    </li>
+                    <li>Quelle instruction permet d’afficher tous les rôles interprétés par Tatiana Maslany&nbsp;?</li>
+                    <li>Quelle instruction permet d’afficher toutes les séries où Tatiana Maslany a un rôle&nbsp;?</li>
+                    <li>Quelle instruction permet d’afficher le prénom et le nom des acteurs jouant dans la série The Americans&nbsp;?</li>
+                    <li>
+                        On peut trier les données en ajoutant <mark class="code">ORDER BY</mark> à la fin de la commande <mark class="code">SELECT</mark>.
+                        Exemple : <br/><mark class="code">SELECT prenom, nom, date_de_naissance FROM acteurs ORDER BY date_de_naissance;</mark>
+                        trie les acteurs du plus âgé au plus jeune. Qui est l’acteur le plus jeune&nbsp;?
+                    </li>
+                </ol>
             </div>
         </div>
         <script type="text/javascript" src="../script.js"></script>
