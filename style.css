@@ -41,6 +41,18 @@ p {
     text-align: justify;
 }
 
+div.niveau {
+    width: 500px;
+    line-height: 100px;
+    border-radius: 30px;
+    background-color: RoyalBlue;
+    text-align: center;
+    color: white;
+    margin: 30px auto;
+    font-size: 24pt;
+    text-decoration: none;
+}
+
 div.exercice {
     counter-increment: counterExo;
     width: 650px;
@@ -82,11 +94,6 @@ table.etroite {
     margin: auto;
 }
 
-caption {
-    caption-side: bottom;
-    font-style: italic;
-}
-
 th, td {
     border: 1px solid black;
     padding: 5px;
@@ -95,11 +102,6 @@ th, td {
 
 li {
     text-align: justify;
-}
-
-.index li {
-    font-size: 16pt;
-    line-height: 150%;
 }
 
 ol.sous-num {
@@ -111,6 +113,17 @@ img {
     width: 650px;
     max-width: 95%;
     margin: 5px auto;
+}
+
+figure {
+    border: 1px solid gray;
+    width: max-content;
+    margin: auto;
+}
+
+figcaption {
+    text-align: center;
+    font-style: italic;
 }
 
 div.main {
@@ -135,11 +148,6 @@ div.algo {
     top: 0;
     right: 0;
     cursor: pointer;
-}
-
-div.encadre {
-    border: 1px solid gray;
-    padding: 3px;
 }
 
 p.code{
@@ -169,12 +177,12 @@ mark.code{
     padding: 0px 3px;
 }
 
-mark.def {
-    cursor: default;
-}
-
 .centrer {
     text-align: center;
+}
+
+.adroite {
+    text-align: right;
 }
 
 span.frac{
@@ -192,8 +200,4 @@ span.bas{
     display: block;
     border-top: 1px solid;
     text-align: center;
-}
-
-span.big {
-    font-size: 24pt;
 }
