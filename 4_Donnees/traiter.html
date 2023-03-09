@@ -3,6 +3,7 @@
     <head>
         <meta charset="utf-8"/>
         <link rel="stylesheet" href="../style.css"/>
+        <link rel="stylesheet" href="exerciceListe.css"/>
     </head>
     <body>
         <div class="main">
@@ -161,14 +162,13 @@
                 On accède aux éléments d’une liste grâce à leur position que l’on appelle aussi <mark>indice</mark>.
                 Attention, en Python, cette numérotation commence à 0 !
             </p>
-            <div class="exercice">
-                On considère la liste <mark class="code">L = [3, 4, 13, 14, 25, 26, 37, 38, 49, 50]</mark>.<br/>
-                Compléter les phrases suivantes :
-                <ol>
-                    <li>L[5] donne la ... valeur, c’est-à-dire la valeur ... .</li>
-                    <li>L[...] donne la 3<sup>ème</sup> valeur, c’est-à-dire la valeur 13.</li>
-                    <li>L[...] donne la 1<sup>ère</sup> valeur, c’est-à-dire la valeur 3.</li>
-                </ol>
+            <div class="exercice" id="exerciceListe" class="exerciseur">
+                <div class="exerciseur"></div>
+                <p class="centrer"></p>
+                <p class="adroite">
+                    <input type="button" value="verifier" id="verifier">
+                    <input type="button" value="refaire" id="refaire">
+                </p>
             </div>
             <p>
                 On peut parcourir les éléments d’une liste à l’aide d’une boucle <mark class="code">for</mark>. Exemple :
@@ -330,5 +330,6 @@
             </div>
         </div>
         <script type="text/javascript" src="../script.js"></script>
+        <script type="text/javascript" src="exerciceListe.js"></script>
     </body>
 </html>

@@ -1,0 +1,34 @@
+.exerciseur input[type="number"], .exerciseur input[type="text"] { 
+    -moz-appearance: textfield;
+    appearance: textfield;
+    width: 30px;
+    text-align: center;
+}
+    
+.exerciseur input::-webkit-inner-spin-button,
+.exerciseur input::-webkit-outer-spin-button { 
+    -webkit-appearance: none;
+    margin:0;
+}
+
+.exerciseur input::-o-inner-spin-button,
+.exerciseur input::-o-outer-spin-button { 
+    -o-appearance: none;
+    margin:0;
+}
+
+input[type=button], input[type=submit] {
+    height: 50px;
+}
+
+.adroite {
+    text-align: right;
+}
+
+.correct {
+    background-color: LightGreen;
+}
+
+.incorrect {
+    background-color: Tomato;
+}
