@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="fr">
+    <head>
+        <meta charset="utf-8"/>
+        <link rel="stylesheet" href="../style.css"/>
+    </head>
+    <body>
+        <div class="main">
+            <h1>Le protocole HTTP</h1>
+            <p>
+                Le protocole HTTP rassemble les règles permettant à un serveur de traiter la demande
+                (requête) d’un utilisateur. Ce protocole viens en complément des protocoles TCP et IP
+                qui régissent les règles de communications sur le réseau Internet.
+            </p>
+            <p>
+                Le navigateur du client (personne qui navigue) construit une demande que l'on appelle une <mark>requête</mark> et le serveur répond en fournissant les ressources demandées par exemple.
+            </p>
+            <h2>Requête du navigateur</h2>
+            <p>
+                Le navigateur de l’utilisateur crée une requête qui comporte toutes les informations pour
+                que le serveur traite la demande :
+            </p>
+            <h3>la méthode utilisée</h3>
+            <p>Cette méthode indique, en un seul mot, la façon dont doivent être traitées les données. Les deux principales méthodes sont <mark>GET</mark> pour demander une ressource (une image, une page web, un document...) et <mark>POST</mark> pour envoyer des données au serveur (via des formulaire par exemple).</p>
+            <h3>les informations d’une visite précédente stockées dans des cookies</h3>
+            <p>
+                Les cookies sont de petits fichiers qui permettent de stocker des informations dans le navigateur d'un visiteur d'une page web afin d'être réutiliser plus tard.
+            </p>
+            <p>
+                Ils ont été conçu pour permettre de savoir si un visiteur est nouveau sur le site ou bien si le serveur doit lui redonner des informations de visites précédentes (temoin de connexion).
+            </p>
+            <p>
+                Avec le temps, les cookies ont été détournés de leur utilisation principale et la plupart sert maintenant de pisteur pour suivre la navigation d'un utilisateur sur différents sites web.
+            </p>
+            <p>
+                L'Union Européenne régule par son «Réglement général sur la protection des données» applicable depuis le 25 mai 2018 l'utilisation de cookies et impose deux règles :
+                <ul>
+                    <li><b>Informer :</b> La première règle est que, avant que l’internaute accepte les cookies, le site doit l’informer, de façon claire et synthétique, de ce à quoi ils vont servir : publicité personnalisée ou non, publicité géolocalisée, personnalisation du contenu ou encore partage d’information avec les réseaux sociaux.</li>
+                    <li><b>Refuser doit être aussi facile que d’accepter :</b> La deuxième est que l’internaute doit pouvoir refuser les cookies aussi facilement qu’il lui est proposé de les accepter, comme l’a récemment jugé le Conseil d’Etat le 19 juin 2020.</li>
+                </ul>
+            </p>
+            <h3>les paramètres de la requête</h3>
+            <p>
+                Toutes les informations necessaires pour que le serveur puisse effectuer la tâche demandée. Il s'agît par exemple des informations à transmettre au serveur.
+            </p>
+            <h3>les informations liées à la sécurité</h3>
+            <p>Nottament lors de l'utilisation du protocole sécurité HTTPS qui utilise des clés secrétes pour crypter les données échangées.</p>
+            <h2>Réponse du serveur</h2>
+            <p>Lorsque cette information est traité par le serveur, celui-ci ajoute :</p>
+            <h3>un code d'état</h3>
+            <p>
+                Il s'agît d'un nombre entier qui permet d'indiquer rapidement si la requête a pu aboutir. Voici quelques codes d'états :
+                <ul>
+                    <li><b>200</b> succés de la requête</li>
+                    <li><b>303</b> redirection sur une autre page</li>
+                    <li><b>304</b> les informations demandées ont déjà été transmissent et devraient se trouver dans la mémoire cache du navigateur</li>
+                    <li><b>404</b> ressource non trouvé ou page web inexistante</li>
+                    <li><b>500</b> erreur interne du serveur du par exemple à une panne de certains services ou à une erreur du développeur du site</li>
+                </ul>
+            </p>
+            <h3>une réponse</h3>
+            <p>Il s'agît de la page web demandée, d'un fichier ou parfois de données envoyées par le serveur au navigateur.</p>
+        </div>
+        <script type="text/javascript" src="../script.js"></script>
+    </body>
+</html>

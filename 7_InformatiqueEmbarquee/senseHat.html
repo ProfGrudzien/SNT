@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="fr">
+    <head>
+        <meta charset="utf-8"/>
+        <link rel="stylesheet" href="../style.css"/>
+    </head>
+    <body>
+        <div class="main">
+            <h1>Découverte de la senseHat</h1>
+            <h2>Le matériel</h2>
+            <h3>Le Raspberry Pi</h3>
+            <p>
+                Le Raspberry Pi est un nano-ordinateur monocarte de la taille d'une carte de crédit conçu par des professeurs du département informatique de l'université de Cambridge. Il dispose de pins GPIO (General Purpose Input/Output) qui permettent la connexion de cartes d'extension ou d'autres composants électroniques pour réaliser des montages.
+            </p>
+            <img src="RPi.jpg">
+            <h3>La SenseHat</h3>
+            <p>
+                La SenseHat est une carte électronique qui regroupe une série de capteurs, une matrice à leds, des entrées et sorties digitales ou analogiques sur une carte d’extension tout-en-un pour une utilisation directe avec un Raspberry Pi.
+            </p>
+            <img src="senseHat.jpg">
+            <p>Nous utiliserons un simulateur de Raspberry Pi et de SenseHat, disponible ici :</p>
+            <p class="centrer"><a href="https://trinket.io/sense-hat">https://trinket.io/sense-hat</a></p>
+            <h2>Afficher une image sur la senseHat</h2>
+            <p>
+                Le code suivant permet l'affichage du drapeau bleu, blanc, rouge.
+            </p>
+            <div class="algo">
+                <input type="button" class="copier" value="📑" title="copier">
+                <p class="code">
+                    from sense_hat import SenseHat<br/>
+                    import time<br/>
+                    <br/>
+                    s = SenseHat()<br/>
+                    s.low_light = True<br/>
+                    <br/>
+                    green  = (  0, 255,   0)<br/>
+                    yellow = (255, 255,   0)<br/>
+                    blue   = (  0,   0, 255)<br/>
+                    red    = (255,   0,   0)<br/>
+                    white  = (255, 255, 255)<br/>
+                    black  = (  0,   0,   0)<br/>
+                    pink   = (255, 105, 180)<br/>
+                    brown  = (120,  10,  10)<br/>
+                    cyan   = (  0, 255, 255)<br/>
+                    <br/>
+                    def flag():<br/>
+                    &nbsp;&nbsp;&nbsp;&nbsp;B = blue<br/>
+                    &nbsp;&nbsp;&nbsp;&nbsp;W = white<br/>
+                    &nbsp;&nbsp;&nbsp;&nbsp;R = red<br/>
+                    &nbsp;&nbsp;&nbsp;&nbsp;O = cyan<br/>
+                    &nbsp;&nbsp;&nbsp;&nbsp;M = brown<br/>
+                    &nbsp;&nbsp;&nbsp;&nbsp;image = [<br/>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;M, B, B, W, W, R, R, O,<br/>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;M, B, B, W, W, R, R, O,<br/>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;M, B, B, W, W, R, R, O,<br/>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;M, B, B, W, W, R, R, O,<br/>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;M, B, B, W, W, R, R, O,<br/>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;M, O, O, O, O, O, O, O,<br/>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;M, O, O, O, O, O, O, O,<br/>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;M, O, O, O, O, O, O, O,<br/>
+                    &nbsp;&nbsp;&nbsp;&nbsp;]<br/>
+                    &nbsp;&nbsp;&nbsp;&nbsp;return image<br/>
+                    <br/>
+                    s.set_pixels(flag())
+                </p>
+            </div>
+            <div class="exercice">
+                Copier-coller ce code dans la partie Python du simulateur et lancer le programme.
+            </div>
+            <div class="exercice">
+                Ecrire les fonctions qui permettent de dessiner :
+                <ol>
+                    <li>un soleil</li>
+                    <li>une feuille d'arbre</li>
+                    <li>un flocon de neige</li>
+                    <li>une goutte d'eau</li>
+                    <li>un desert</li>
+                </ol>
+            </div>
+            <h2>Utilisation des capteurs</h2>
+            <p>
+                Le Sense HAT dispose d'un ensemble de capteurs lui permettant de détecter les conditions autour de lui.
+                Il peut, entre autres, détecter :
+                <ul>
+                    <li>La pression (dit "Pressure" en anglais).</li>
+                    <li>La température (dit "Temperature" en anglais).</li>
+                    <li>L'humidité (dit "Humidity" en anglais).</li>
+                </ul>
+                Nous pouvons obtenir ces informations à l'aide de 3 méthodes simples :
+                <ul>
+                    <li><mark class="code">s.get_temperature()</mark> - qui retourne la température en degrés Celsius.</li>
+                    <li><mark class="code">s.get_pressure()</mark> - qui retourne la pression en millibars.</li>
+                    <li><mark class="code">s.get_humidity()</mark> - qui retourne le taux d'humidité sous forme d'un pourcentage.</li>
+                </ul>
+            </p>
+            <div class="exercice">
+                Ecrire un programme qui affiche une goutte d'eau si le pourcentage d'humidité dépasse 50 %, un desert sinon.
+            </div>
+            <div class="exercice">
+                Ecrire un programme qui affiche un dessin selon la température :
+                <ul>
+                    <li>un soleil si la température dépasse 35°C</li>
+                    <li>une feuille d'arbre si la température est comprise entre 15°C et 35°C</li>
+                    <li>un flocon si la température est en dessous de 15°C</li>
+                </ul>
+            </div>
+        </div>
+        <script type="text/javascript" src="../script.js"></script>
+    </body>
+</html>
