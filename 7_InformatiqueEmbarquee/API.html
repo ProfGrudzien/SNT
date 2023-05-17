@@ -12,7 +12,7 @@
                 Une API (application programming interface ou « interface de programmation d’application ») est une interface logicielle qui permet de « connecter » un logiciel ou un service à un autre logiciel ou service afin d’échanger des données et des fonctionnalités.
             </p>
             <p>
-                Les API web permettent d'accéder à des données en utilisant de simples requêtes HTTP. C'est ce que nous allons étudier ici grâce au logiciel Insomnia REST.
+                Les API web permettent d'accéder à des données en utilisant de simples requêtes HTTP. C'est ce que nous allons étudier ici grâce au logiciel Insomnia REST. Ce logiciel simule le logiciel devant accéder à l'API web hébergé sur un serveur distant.
             </p>
             <h2>API ouverte en accès libre</h2>
             <p>
@@ -57,7 +57,7 @@
                     <li>Dans l'onglet <mark class="code">Auth</mark>, choisir <mark class="code">Basic Auth</mark> et saisir <mark class="code">admin</mark> comme nom d'utilisateur et <mark class="code">vivaSNT</mark> comme mot de passe.<br/>
                         Quelle est la réponse obtenue ?</li>
                     <li>En étant authentifié comme <mark class="code">admin</mark>, choisissez la méthode <mark class="code">PUT</mark> et l'url <mark class="code">localhost:3000/creerUtilisateur</mark>.
-                        Dans l'onglet <mark class="code">Body</mark> choisir <mark class="code">JSON</mark> et coller le texte <mark class="code">{"user":"Ismael", "password":"dauphin83"}</mark>.<br/>
+                        Dans l'onglet <mark class="code">Body</mark> choisir <mark class="code">JSON</mark> et coller le texte <mark class="code">{"user":"Ismael", "password":"dauphin84"}</mark>.<br/>
                         Vous venez de créer un nouvel utilisateur</li>
                     <li>S'authentifier en tant que <mark class="code">Ismael</mark> et vérifier que la connexion se passe bien.</li>
                     <li>Il est temps d'ajouter un secret. En tant que <mark class="code">Ismael</mark>, utiliser la méthode <mark class="code">POST</mark>, l'url <mark class="code">localhost:3000/secret</mark> et le <mark class="code">Body</mark> <mark class="code">{"secret":"Je suis amoureux."}</mark> pour poster ce secret.</li>
