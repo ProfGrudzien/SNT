@@ -1,1 +1,2 @@
-taille = float(input("Taille ?"))
+print("Taille ?")
+taille = float(input(">"))

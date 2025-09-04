@@ -1,1 +1,2 @@
-nom = input("Ton nom ?")
+print("Ton nom ?")
+nom = input(">")
